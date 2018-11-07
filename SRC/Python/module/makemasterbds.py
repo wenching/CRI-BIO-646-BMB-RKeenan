@@ -525,8 +525,8 @@ goal( [ '{}' ] )
                 "rseqc":
                 [
                     "clipping_profile.py",
-                    "geneBody_coverage.py", # DISABLE from example due to long running time
-                    "RPKM_saturation.py", # DISABLE from example due to long running time
+                    #"geneBody_coverage.py", # DISABLE due to long running time
+                    #"RPKM_saturation.py", # DISABLE due to long running time
                     "infer_experiment.py"
                 ]
             }

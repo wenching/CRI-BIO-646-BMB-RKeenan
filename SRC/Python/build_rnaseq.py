@@ -381,9 +381,9 @@ Contact     : Wen-Ching Chan <wchan10@bsd.uchicago.edu>
                 "rseqc":
                 [
                     "clipping_profile.py",
-                    #"geneBody_coverage.py", # DISABLE from example due to long running time
-                    "infer_experiment.py",
-                    "RPKM_saturation.py"
+                    "geneBody_coverage.py", # DISABLE at makemasterbds.py due to long running time
+                    "RPKM_saturation.py", # DISABLE at makemasterbds.py due to long running time
+                    "infer_experiment.py"
                 ]
             }
     else:
