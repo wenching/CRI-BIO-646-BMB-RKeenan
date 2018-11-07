@@ -1,0 +1,237 @@
+---
+pipeline:
+  flags:
+    aligners:
+      run_star: True
+    quantifiers:
+      run_featurecounts: True
+      run_rsem: False
+      run_kallisto: False
+    callers:
+      run_edger: True
+      run_deseq2: True
+      run_limma: True
+  software:
+    main:
+      use_module: 0
+      adapter_pe: AGATCGGAAGAGCGGTTCAG,AGATCGGAAGAGCGTCGTGT
+      adapter_se: AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA
+      fastq_format: 33
+      genome_assembly: grch38
+      min_base_qual: 20
+      min_map_qual: 0
+      module_source: ~
+      ploidy: 2
+      qc_check: QUAL:30:50,NFD:0:20,GC:40:60,N:0:2
+      report_variants_pass: True
+      threads: 8
+      max_multiple_hit: 1
+      r_dir_path: SRC/R
+    bedtools:
+      exe: module load bedtools;bedtools
+      mem: 4
+      module: ~
+      threads: 1
+      ## Treat "split" BAM or BED12 entries as distinct BED intervals (rnaseq)
+      split: True
+      scale: True
+      scale_count: 50000000
+    edger:
+      exe: "Rscript --vanilla"
+      script: "module/edgeR.R"
+      mem: 4
+      module: module purge; module load gcc R/3.5.0; module update
+      threads: 4
+    deseq2:
+      exe: "Rscript --vanilla"
+      script: "module/DESeq2.R"
+      mem: 4
+      module: module purge; module load gcc R/3.5.0; module update
+      threads: 4
+    limma:
+      exe: "Rscript --vanilla"
+      script: "module/limma.R"
+      mem: 4
+      module: module purge; module load gcc R/3.5.0; module update
+      threads: 4
+    pca:
+      exe: "Rscript --vanilla"
+      script: "module/PCA.R"
+      mem: 4
+      module: module purge; module load gcc R/3.5.0; module update
+      threads: 1
+    venn:
+      exe: "Rscript --vanilla"
+      script: "module/Venn.R"
+      mem: 4
+      module: module purge; module load gcc R/3.5.0; module update
+      threads: 1
+    pheatmap:
+      exe: "Rscript --vanilla"
+      script: "module/pheatmap.R"
+      mem: 4
+      module: module purge; module load gcc R/3.5.0; module update
+      threads: 4
+    clusterprofiler:
+      exe: "Rscript --vanilla"
+      script: "module/clusterProfiler.R"
+      mem: 4
+      module: module purge; module load gcc udunits R/3.5.0; module update
+      threads: 1
+    fastqc:
+      exe: fastqc
+      mem: 4
+      module: module purge; module load gcc java-jdk fastqc; module update
+      threads: 4
+    featurecounts:
+      exe: featureCounts
+      mem: 4
+      module: module purge; module load gcc subread; module update
+      threads: 4
+      min_map_qual: 255
+      # annotation
+      annot_inbuilt: ~
+      annot_file: ~
+      annot_ext: GTF
+      isGTFAnnotationFile: True # seems redundant to annot_ext
+      GTF_featureType: exon
+      GTF_attrType: gene_id
+      # multi-mapping reads
+      countMultiMappingReads: True
+      # fractional counting
+      fraction: True
+      # read filtering
+      primaryOnly: False # set to True to disable countMultiMappingReads & fraction
+      # strandness
+      strandSpecific: ~
+      # exon-exon junctions
+      juncCounts: True
+      # parameters specific to paired end reads
+      isPairedEnd: ~
+      requireBothEndsMapped: True
+      countChimericFragments: False
+    java:
+      exe: ~
+      module: ~
+    bigdatascript:
+      safeSleep: 2
+    perl:
+      exe: ~
+      lib_path: ~
+      module: ~
+    picard:
+      ## for picard 2.0+, java 1.8 is required
+      exe: ${PICARD}
+      max_records_in_mem: 20000000
+      mem: 15
+      module: module purge; module load gcc java-jdk picard R; module update;
+      threads: 4
+      assume_sorted: True
+      validation_stringency: LENIENT
+      metric_accumulation_level: SAMPLE
+    pigz:
+      exe: module load pigz;pigz
+      mem: 2
+      module: ~
+      threads: 4
+    python:
+      exe: ~
+      lib_path: ~
+      module: ~
+    R:
+      exe: ~
+      module: ~
+    rseqc:
+      exe: ~
+      mem: 4
+      module: module purge; module load gcc python/2.7.13 R; module update;
+      threads: 8
+      sample_size: 200000
+    sambamba:
+      exe: /apps/software/dmd-2.072.1/sambamba/0.6.5/sambamba
+      max_mem_per_thread: 1G
+      mem: 1
+      module: ~
+      threads: 4
+    samtools:
+      exe: module load samtools;samtools
+      max_mem_per_thread: 1G
+      mem: 1
+      module: ~
+      threads: 4
+    star:
+      exe: STAR
+      mem: 6
+      module: module purge; module load gcc STAR; module update;
+      threads: 4
+      genome_load: NoSharedMemory
+      readFiles_command: zcat
+      out_sam_strand_field: intronMotif
+      out_filter_intron_motifs: RemoveNoncanonicalUnannotated
+      out_sam_type: BAM SortedByCoordinate
+      out_reads_unmapped: Fastx
+      two_pass_mode: ~
+    trimmomatic:
+      exe: ${TRIMMOMATIC}
+      mem: 4
+      module: ~
+      threads: 4
+      adapterfasta: /apps/software/java-jdk-1.8.0_92/trimmomatic/0.36/adapters/TruSeq3-SE.fa
+      illuminaclip: "2:30:10"
+      leading: 5
+      minlen: 36
+      trailing: 5
+      slidingwindow: "4:15"
+    ucsc:
+      ## note this is the path to tool installation directory (not the tool itself)
+      exe: module spider UCSCtools
+      module: ~
+    util:
+      check_qc_exe: Check_QC.pl
+      mem: 8
+      path: SRC/Perl/util
+  references:
+    hg38:
+      anno_bed: /gpfs/data/bioinformatics/cri_rnaseq_2018/example/references/v28_92_GRCh38.p12/genes.gtf.bed12
+      chrom_size: /gpfs/data/bioinformatics/cri_rnaseq_2018/example/references/v28_92_GRCh38.p12/genome.chrom.sizes
+      genomedict: /gpfs/data/bioinformatics/cri_rnaseq_2018/example/references/v28_92_GRCh38.p12/genome.dict
+      genome: /gpfs/data/bioinformatics/cri_rnaseq_2018/example/references/v28_92_GRCh38.p12/genome.fa
+      anno_bed12: /gpfs/data/bioinformatics/cri_rnaseq_2018/example/references/v28_92_GRCh38.p12/genes.gtf.bed12
+      anno_gtf: /gpfs/data/bioinformatics/cri_rnaseq_2018/example/references/v28_92_GRCh38.p12/genes.gtf
+      anno_ribosome_rna_bed: /gpfs/data/bioinformatics/cri_rnaseq_2018/example/references/v28_92_GRCh38.p12/GRCh38_rRNA.bed
+      anno_ribosome_rna_interval: /gpfs/data/bioinformatics/cri_rnaseq_2018/example/references/v28_92_GRCh38.p12/GRCh38_rRNA.bed.interval_list
+      anno_refflat: /gpfs/data/bioinformatics/cri_rnaseq_2018/example/references/v28_92_GRCh38.p12/genes.refFlat.txt
+      chrs: chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chrX,chrY,chrM
+      star_index: /gpfs/data/bioinformatics/cri_rnaseq_2018/example/references/v28_92_GRCh38.p12/STAR
+    grch38:
+      anno_bed: /gpfs/data/bioinformatics/cri_rnaseq_2018/example/references/GRCh38.primary_Gencode24_50bp_chr11/gencode.v24.primary_assembly.annotation.chr11.bed12
+      chrom_size: /gpfs/data/bioinformatics/cri_rnaseq_2018/example/references/GRCh38.primary_Gencode24_50bp_chr11/GRCh38.primary_assembly.genome.chr11.chrom.size
+      genomedict: /gpfs/data/bioinformatics/cri_rnaseq_2018/example/references/GRCh38.primary_Gencode24_50bp_chr11/GRCh38.primary_assembly.genome.chr11.dict
+      genome: /gpfs/data/bioinformatics/cri_rnaseq_2018/example/references/GRCh38.primary_Gencode24_50bp_chr11/GRCh38.primary_assembly.genome.chr11.fa
+      anno_bed12: /gpfs/data/bioinformatics/cri_rnaseq_2018/example/references/GRCh38.primary_Gencode24_50bp_chr11/gencode.v24.primary_assembly.annotation.chr11.bed12
+      anno_gtf: /gpfs/data/bioinformatics/cri_rnaseq_2018/example/references/GRCh38.primary_Gencode24_50bp_chr11/gencode.v24.primary_assembly.annotation.chr11.gtf
+      anno_ribosome_rna_bed: /gpfs/data/bioinformatics/cri_rnaseq_2018/example/references/GRCh38.primary_Gencode24_50bp_chr11/gencode.v24.primary_assembly.annotation.chr11.rRNA.bed
+      anno_ribosome_rna_interval: /gpfs/data/bioinformatics/cri_rnaseq_2018/example/references/GRCh38.primary_Gencode24_50bp_chr11/gencode.v24.primary_assembly.annotation.chr11.rRNA.interval_list
+      anno_refflat: /gpfs/data/bioinformatics/cri_rnaseq_2018/example/references/GRCh38.primary_Gencode24_50bp_chr11/gencode.v24.primary_assembly.annotation.chr11.refFlat.txt
+      chrs: chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,chr9,chr10,chr11,chr12,chr13,chr14,chr15,chr16,chr17,chr18,chr19,chr20,chr21,chr22,chrX,chrY,chrM
+      star_index: /gpfs/data/bioinformatics/cri_rnaseq_2018/example/references/GRCh38.primary_Gencode24_50bp_chr11
+  parameters:
+    RNAseq:
+      criteria: fc_q
+      fold_change: 1.5
+      pval: 0.1
+      filter_4_low_expr: True
+project:
+  name: ~
+  proj_dir_path: ~
+  appl_dir_path: ~
+  metadata_path: ~
+  ex_metadata_md5: ~
+  run_as_practice: True
+  application: RNAseq
+  comparison:
+    KO_vs_WT:
+      criteria: ~
+      fold_change: ~
+      pval: ~
+      filter_4_low_expr: ~

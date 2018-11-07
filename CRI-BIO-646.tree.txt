@@ -1,0 +1,129 @@
+.
+|-- Build_RNAseq.CRI-BIO-646.sh
+|-- CRI-BIO-646
+|   |-- CRI-BIO-646.metadata.txt
+|   |-- CRI-BIO-646.pipeline.yaml
+|   |-- data
+|   |   |-- 180216_K00242_0355_AHT7NTBBXX-RKeenan-AA-RS10
+|   |   |   `-- FastQ
+|   |   |       |-- BK-AA-1_S11_L007_R1_001.fastq.gz
+|   |   |       |-- BK-AA-2_S12_L007_R1_001.fastq.gz
+|   |   |       |-- BK-AA-3_S13_L007_R1_001.fastq.gz
+|   |   |       |-- BK-AA-4_S14_L007_R1_001.fastq.gz
+|   |   |       |-- BK-AA-5_S15_L007_R1_001.fastq.gz
+|   |   |       `-- BK-AA-6_S16_L007_R1_001.fastq.gz
+|   |   `-- 180223_K00242_0357_AHT37VBBXX-RKeenan-AA-RS10
+|   |       `-- FastQ
+|   |           |-- BK-AA-1_S11_L007_R1_001.fastq.gz
+|   |           |-- BK-AA-2_S12_L007_R1_001.fastq.gz
+|   |           |-- BK-AA-3_S13_L007_R1_001.fastq.gz
+|   |           |-- BK-AA-4_S14_L007_R1_001.fastq.gz
+|   |           |-- BK-AA-5_S15_L007_R1_001.fastq.gz
+|   |           `-- BK-AA-6_S16_L007_R1_001.fastq.gz
+|   `-- references
+|       `-- v28_92_GRCh38.p12
+        |   |-- GRCh38_rRNA.bed
+        |   |-- GRCh38_rRNA.bed.interval_list
+        |   |-- STAR
+        |   |   |-- Genome
+        |   |   |-- Log.out
+        |   |   |-- SA
+        |   |   |-- SAindex
+        |   |   |-- chrLength.txt
+        |   |   |-- chrName.txt
+        |   |   |-- chrNameLength.txt
+        |   |   |-- chrStart.txt
+        |   |   |-- exonGeTrInfo.tab
+        |   |   |-- exonInfo.tab
+        |   |   |-- geneInfo.tab
+        |   |   |-- genomeParameters.txt
+        |   |   |-- run_genome_generate.logs
+        |   |   |-- sjdbInfo.txt
+        |   |   |-- sjdbList.fromGTF.out.tab
+        |   |   |-- sjdbList.out.tab
+        |   |   `-- transcriptInfo.tab
+        |   |-- genes.gtf
+        |   |-- genes.gtf.bed12
+        |   |-- genes.refFlat.txt
+        |   |-- genome.chrom.sizes
+        |   |-- genome.dict
+        |   `-- genome.fa
+`-- SRC
+    |-- Python
+    |   |-- build_rnaseq.py
+    |   |-- lib
+    |   |   |-- __init__.py
+    |   |   |-- __pycache__
+    |   |   |   |-- __init__.cpython-36.pyc
+    |   |   |   |-- clusterprofiler.cpython-36.pyc
+    |   |   |   |-- deseq2.cpython-36.pyc
+    |   |   |   |-- edger.cpython-36.pyc
+    |   |   |   |-- fastqc.cpython-36.pyc
+    |   |   |   |-- limma.cpython-36.pyc
+    |   |   |   |-- pca.cpython-36.pyc
+    |   |   |   |-- pheatmap.cpython-36.pyc
+    |   |   |   |-- picard.cpython-36.pyc
+    |   |   |   |-- rseqc.cpython-36.pyc
+    |   |   |   |-- sambamba.cpython-36.pyc
+    |   |   |   |-- star.cpython-36.pyc
+    |   |   |   |-- subread.cpython-36.pyc
+    |   |   |   `-- venn.cpython-36.pyc
+    |   |   |-- clusterprofiler.py
+    |   |   |-- deseq2.py
+    |   |   |-- edger.py
+    |   |   |-- fastqc.py
+    |   |   |-- limma.py
+    |   |   |-- pca.py
+    |   |   |-- pheatmap.py
+    |   |   |-- picard.py
+    |   |   |-- rseqc.py
+    |   |   |-- sambamba.py
+    |   |   |-- star.py
+    |   |   |-- subread.py
+    |   |   `-- venn.py
+    |   |-- module
+    |   |   |-- __init__.py
+    |   |   |-- __pycache__
+    |   |   |   |-- __init__.cpython-36.pyc
+    |   |   |   |-- alignread.cpython-36.pyc
+    |   |   |   |-- alnqc.cpython-36.pyc
+    |   |   |   |-- callloci.cpython-36.pyc
+    |   |   |   |-- locistat.cpython-36.pyc
+    |   |   |   |-- makemasterbds.cpython-36.pyc
+    |   |   |   |-- mergealn.cpython-36.pyc
+    |   |   |   |-- postana.cpython-36.pyc
+    |   |   |   |-- quantification.cpython-36.pyc
+    |   |   |   |-- quantqc.cpython-36.pyc
+    |   |   |   `-- readqc.cpython-36.pyc
+    |   |   |-- alignread.py
+    |   |   |-- alnqc.py
+    |   |   |-- callloci.py
+    |   |   |-- locistat.py
+    |   |   |-- makemasterbds.py
+    |   |   |-- mergealn.py
+    |   |   |-- postana.py
+    |   |   |-- quantification.py
+    |   |   |-- quantqc.py
+    |   |   `-- readqc.py
+    |   `-- util
+    |       |-- AutoVivification.py
+    |       |-- __init__.py
+    |       |-- __pycache__
+    |       |   |-- __init__.cpython-36.pyc
+    |       |   |-- ddictfunc.cpython-36.pyc
+    |       |   `-- hashlib.cpython-36.pyc
+    |       |-- ddictfunc.py
+    |       `-- hashlib.py
+    `-- R
+        |-- module
+        |   |-- DESeq2.R
+        |   |-- PCA.R
+        |   |-- Venn.R
+        |   |-- clusterProfiler.R
+        |   |-- edgeR.R
+        |   |-- limma.R
+        |   `-- pheatmap.R
+        `-- util
+            |-- argparse.R
+            |-- prerequisite.packages.R
+            `-- pylogger.R
