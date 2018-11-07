@@ -7,7 +7,7 @@ now=$(date +"%m-%d-%Y_%H:%M:%S")
 ## project info
 project="CRI-BIO-646"
 SubmitRNAseqExe="Submit_${PWD##*/}.sh"
-padding="example/"
+padding="CRI-BIO-646/"
 
 ## command
 echo "START" `date` " Running build_rnaseq.py"
