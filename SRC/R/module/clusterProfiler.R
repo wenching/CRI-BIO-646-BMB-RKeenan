@@ -652,26 +652,23 @@ for(i.idx in seq_len(length(lst.gene.id))) {
     
     c.geneSetID <- head(subset(gseaRes.kegg@result, NES < 0)$ID, min(5, nrow(subset(gseaRes.kegg@result, NES < 0))))[1]
     if(isFALSE(is.na(c.geneSetID))) {
+      c.top <- paste("neg", sprintf(fmt = "%03d", match(c.geneSetID, subset(gseaRes.kegg@result, NES < 0)$ID)), sep = "")
       
-      if(! is.na(c.geneSetID)) {
-        c.top <- paste("neg", sprintf(fmt = "%03d", match(c.geneSetID, subset(gseaRes.kegg@result, NES < 0)$ID)), sep = "")
-        
-        c.out.file.t.path <- gsub("\\.enrichGO.ALL.txt$", paste0(".enrichGSEAKEGG.", c.top, ".pdf"), args$c.out.file.path)
-        flog.info(paste("OUT_FILE_PATH:", c.out.file.t.path, sep = "\t"))
-        
-        pdf(file = c.out.file.t.path, width = 8, height = 6, onefile = F)
-        print(
-          enrichplot::gseaplot(
-            x = gseaRes.kegg,
-            geneSetID = c.geneSetID,
-            by = "all",
-            title = c.geneSetID,
-            color.line = "green",
-            color.vline = "blue"
-          )
+      c.out.file.t.path <- gsub("\\.enrichGO.ALL.txt$", paste0(".enrichGSEAKEGG.", c.top, ".pdf"), args$c.out.file.path)
+      flog.info(paste("OUT_FILE_PATH:", c.out.file.t.path, sep = "\t"))
+      
+      pdf(file = c.out.file.t.path, width = 8, height = 6, onefile = F)
+      print(
+        enrichplot::gseaplot(
+          x = gseaRes.kegg,
+          geneSetID = c.geneSetID,
+          by = "all",
+          title = c.geneSetID,
+          color.line = "green",
+          color.vline = "blue"
         )
-        dev.off()
-      }
+      )
+      dev.off()
     }
   }
   
