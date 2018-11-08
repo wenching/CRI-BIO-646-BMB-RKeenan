@@ -35,9 +35,9 @@ This repository contains the following items:
 **THIS PACKAGE IS LARGE, PLEASE DO NOT DOWNLOAD IT TO YOUR HOME DIRECTORY**  
 **USE OTHER LOCATION LIKE /gpfs/data/bioinformatics/username**
 
-# download the package
+# download the package via 'wget'
 wget ftp://logia.cri.uchicago.edu/bioinformatics/tutorials/Nov2018/CRI-BIO-646-BMB-RKeenan.tgz
-# Or, copy directly from HPC
+# Or, copy the package directly from HPC
 cp /gpfs/data/bioinformatics/shared/tutorials/Nov2018/CRI-BIO-646-BMB-RKeenan.tgz .
 
 # uncompress the tarball file

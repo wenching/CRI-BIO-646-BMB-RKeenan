@@ -434,17 +434,22 @@ The login procedure varies slightly depending on whether you use a Mac/Unix/Linu
         ```
 
 * Download the pipeline package  
-    1. One way to download the pipeline package via `git clone`  
+    1. One way to download the pipeline package via `wget`  
         
         ```bash
-        $ cp ftp://logia.cri.uchicago.edu/bioinformatics/tutorials/Nov2018/CRI-BIO-646-BMB-RKeenan.tgz .
+        $ wget ftp://logia.cri.uchicago.edu/bioinformatics/tutorials/Nov2018/CRI-BIO-646-BMB-RKeenan.tgz
         ```
-    2. Uncompress the tarball file  
+    2. Or, copy the package directly from HPC  
+        
+        ```bash
+        $ cp /gpfs/data/bioinformatics/shared/tutorials/Nov2018/CRI-BIO-646-BMB-RKeenan.tgz .
+        ```
+    3. Uncompress the tarball file  
         
         ```bash
         $ tar -zxvf CRI-BIO-646-BMB-RKeenan.tgz
         ```
-    3. Change working directory to pipeline dirctory  
+    4. Change working directory to pipeline dirctory  
         
         ```bash
         $ cd CRI-BIO-646-BMB-RKeenan
