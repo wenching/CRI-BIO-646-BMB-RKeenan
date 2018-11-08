@@ -4,7 +4,7 @@ RNA-Seq Analysis Pipeline based on [CRI](http://cri.uchicago.edu/) HPC system
 
 # CAUTION
 
-**THIS PACKAGE IS LARGE, PLEASE DO NOT DOWNLOAD THIS PACKAGE TO YOUR HOME DIRECTORY**
+**THIS PACKAGE IS LARGE, PLEASE DO NOT DOWNLOAD THIS PACKAGE TO YOUR HOME DIRECTORY**  
 **USE OTHER LOCATION LIKE /gpfs/data/bioinformatics/username**
 
 ## Dataset
@@ -32,7 +32,7 @@ This repository contains the following items:
 ```bash
 # CAUTION
 
-**THIS PACKAGE IS LARGE, PLEASE DO NOT DOWNLOAD THIS PACKAGE TO YOUR HOME DIRECTORY**
+**THIS PACKAGE IS LARGE, PLEASE DO NOT DOWNLOAD THIS PACKAGE TO YOUR HOME DIRECTORY**  
 **USE OTHER LOCATION LIKE /gpfs/data/bioinformatics/username**
 
 # download the package
