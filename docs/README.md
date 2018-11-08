@@ -71,7 +71,7 @@ If you have any questions, comments, or suggestions, feel free to contact our co
 1. modify the generator script **Build_RNAseq.CRI-BIO-646.sh** accordingly
     1. project="PROJECT_AS_PREFIX" (e.g., **CRI-BIO-646** which is used as a prefix of metadata file **CRI-BIO-646**.metadata.txt and configuration file **CRI-BIO-646**.pipeline.yaml)
     2. padding="DIRECTORY_NAME_CONTAINING_PROJECT_DATA" (e.g., **CRI-BIO-646** which is the folder name to accommodate metadata file, configuration file, sequencing data folder, and references folder)
-2. prepare metadata file as the example of **[CRI-BIO-646/CRI-BIO-646.metadata.txt](CRI-BIO-646/CRI-BIO-646.metadata.txt)**
+2. prepare metadata file as the example of **[CRI-BIO-646.metadata.txt](CRI-BIO-646.metadata.txt)**
     1. **Single End (SE)** Library
         1. Set Flavor column as 1xReadLength (e.g., 1x50)
         2. Set Seqfile1 column as the file name of the repective sequencing file
@@ -120,7 +120,7 @@ This tutorial is based on CRI's high-performance computing (HPC) cluster. If you
 The RNA-seq data used in this tutorial are from **CRI-BIO-646-BMB-RKeenan**.
 
 In this tutorial, we use the sequencing reads in the project CRI-BIO-646 in mouse as example.
-The sample information are saved in the file **<span style="color:red">`CRI-BIO-646/CRI-BIO-646.metadata.txt`</span>** (see [below](#Data)).
+The sample information are saved in the file **<span style="color:red">`CRI-BIO-646.metadata.txt`</span>** (see [below](#Data)).
 
 ![Work Flow](IMG/RNAseq.workflow.png)
 
@@ -129,7 +129,7 @@ The sample information are saved in the file **<span style="color:red">`CRI-BIO-
 ## <a name="Data"/>Data Description | [Top](#Top)
 
 There are six (partial) single-end RNA-seq sequencing libraries will be used as the example dataset In this tutorial.
-Their respective sample information is described in the metadata table CRI-BIO-646/**`CRI-BIO-646/CRI-BIO-646.metadata.txt`**.
+Their respective sample information is described in the metadata table CRI-BIO-646/**`CRI-BIO-646.metadata.txt`**.
 
 
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; "><table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
@@ -514,7 +514,7 @@ The login procedure varies slightly depending on whether you use a Mac/Unix/Linu
     - project related files (i.e., metadata & configuration file) as used in this tutorial are located under **`CRI-BIO-646/`**  
         
         ```bash
-        $ ls -l CRI-BIO-646/CRI-BIO-646.*
+        $ ls -l CRI-BIO-646.*
         |-- CRI-BIO-646.metadata.txt
         |-- CRI-BIO-646.pipeline.yaml
         ```
@@ -540,7 +540,7 @@ The login procedure varies slightly depending on whether you use a Mac/Unix/Linu
                   adapter_pe: AGATCGGAAGAGCGGTTCAG,AGATCGGAAGAGCGTCGTGT
                   adapter_se: AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA
                   fastq_format: 33
-                  genome_assembly: grch38
+                  genome_assembly: hg38
             ```
         
         >   
@@ -800,16 +800,16 @@ The BDS code snippet for the sample KO01 will look like:
 
 
 ```bash
-$ grep -A1 run.RawReadQC.FastQC.BK-AA-1_S11_L007_R355.sh Submit_CRI-BIO-646-BMB-RKeenan.bds
-dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/WT01/BK-AA-1_S11_L007_R355/BK-AA-1_S11_L007_R1_001_fastqc.zip' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180216_K00242_0355_AHT7NTBBXX-RKeenan-AA-RS10/FastQ/BK-AA-1_S11_L007_R1_001.fastq.gz' ], cpus := 1, mem := 16*G, timeout := 72*hour, taskName := "FastQC.BK-AA-1_S11_L007_R355") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.RawReadQC.FastQC.BK-AA-1_S11_L007_R355.sh; sleep 2
-goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/WT01/BK-AA-1_S11_L007_R355/BK-AA-1_S11_L007_R1_001_fastqc.zip' ] )
+$ grep -A1 run.RawReadQC.FastQC.BK-AA-4_S14_L007_R355.sh Submit_CRI-BIO-646-BMB-RKeenan.bds
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/KO01/BK-AA-4_S14_L007_R355/BK-AA-4_S14_L007_R1_001_fastqc.zip' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180216_K00242_0355_AHT7NTBBXX-RKeenan-AA-RS10/FastQ/BK-AA-4_S14_L007_R1_001.fastq.gz' ], cpus := 1, mem := 16*G, timeout := 72*hour, taskName := "FastQC.BK-AA-4_S14_L007_R355") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.RawReadQC.FastQC.BK-AA-4_S14_L007_R355.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/KO01/BK-AA-4_S14_L007_R355/BK-AA-4_S14_L007_R1_001_fastqc.zip' ] )
 ```
 
-This code chunk will invoke the bash script CRI-BIO-646/CRI-BIO-646/RNAseq/shell_scripts/**`run.RawReadQC.FastQC.BK-AA-1_S11_L007_R355.sh`** to execute FastQC on the WT01(BK-AA-1_S11_L007_R355) sequencing library.
+This code chunk will invoke the bash script RNAseq/shell_scripts/**`run.RawReadQC.FastQC.BK-AA-4_S14_L007_R355.sh`** to execute FastQC on the KO01(BK-AA-1_S11_L007_R355) sequencing library.
 
-After the completion of the entire pipeline, you can check FastQC report per individual libraries; for instance, the partial report of KO01 will be as follows or a full [report](result/BK-AA-1_S11_L007_R355_fastqc.html).
+After the completion of the entire pipeline, you can check FastQC report per individual libraries; for instance, the partial report of KO01 will be as follows or a full [report](result/BK-AA-4_S14_L007_R355_fastqc.html).
 
-<img src="IMG/BK-AA-1_S11_L007_R1_001_fastqc.png" alt="WT01_FastQC"  width="800" height="1200">
+<img src="IMG/BK-AA-4_S14_L007_R1_001_fastqc.png" alt="KO01_FastQC"  width="800" height="1200">
 
 You can check [FastQC Help](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/) for more details about how to interpret a FastQC report.
 
@@ -817,156 +817,175 @@ Or, compare your reports to the example reports provided by FastQC for a [Good I
 
 
 
-<!-- ### <a name="Aln"/>Step 2.1: Read Alignment | [Top](#Top) -->
+### <a name="Aln"/>Step 2.1: Read Alignment | [Top](#Top)
 
 
-<!-- In this step, the pipeline will conduct read alignment on the raw fastq files. -->
+In this step, the pipeline will conduct read alignment on the raw fastq files.
 
-<!-- The BDS code snippet for the sample KO01 will look like: -->
-
-<!-- ```{r, engine='bash', eval=FALSE} -->
-<!-- $ grep -A1 run.alignRead.star.SRR1205282.sh CRI-BIO-646/CRI-BIO-646/Submit_RNAseq.CRI-BIO-646.bds -->
-<!-- dep( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Aln/star/KO01/SRR1205282/SRR1205282.star.bam' ] <- [ '/group/bioinformatics/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/data/KO01.test.fastq.gz' ], cpus := 4, mem := 64*G, timeout := 72*hour, taskName := "star.SRR1205282") sys bash /home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/shell_scripts/run.alignRead.star.SRR1205282.sh; sleep 2 -->
-<!-- goal( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Aln/star/KO01/SRR1205282/SRR1205282.star.bam' ] ) -->
-<!-- ``` -->
-
-<!-- This code chunk will invoke the bash script CRI-BIO-646/CRI-BIO-646/RNAseq/shell_scripts/**`run.alignRead.star.SRR1205282.sh`** to execute STAR on the KO01(SRR1205282) sequencing library. -->
-
-<!-- After the completion of the entire pipeline, you can check the alignment result of each individual libraries; for instance, the result of KO01(SRR1205282) will be as follows. -->
-
-<!-- ```{r, engine='bash', eval=FALSE} -->
-<!-- $ tree CRI-BIO-646/CRI-BIO-646/RNAseq/Aln/star/KO01/SRR1205282 -->
-<!-- CRI-BIO-646/CRI-BIO-646/RNAseq/Aln/star/KO01/SRR1205282 -->
-<!-- |-- SRR1205282.star.Aligned.sortedByCoord.out.bam -->
-<!-- |-- SRR1205282.star.Log.final.out -->
-<!-- |-- SRR1205282.star.Log.out -->
-<!-- |-- SRR1205282.star.Log.progress.out -->
-<!-- |-- SRR1205282.star.SJ.out.tab -->
-<!-- |-- SRR1205282.star.Unmapped.out.mate1 -->
-<!-- |-- SRR1205282.star.bai -->
-<!-- |-- SRR1205282.star.bam -> SRR1205282.star.Aligned.sortedByCoord.out.bam -->
-<!-- `-- run.alignRead.star.SRR1205282.log -->
-<!-- ``` -->
-
-<!-- You can check a log file (e.g., **CRI-BIO-646/CRI-BIO-646/RNAseq/Aln/star/KO01/`SRR1205282/SRR1205282.star.Log.final.out`**) for more alignment information provided by STAR. -->
-
-<!-- ```{r, engine='bash', eval=FALSE} -->
-<!-- $ cat CRI-BIO-646/CRI-BIO-646/RNAseq/Aln/star/KO01/SRR1205282/SRR1205282.star.Log.final.out -->
-<!--                                  Started job on |	Jul 25 13:38:32 -->
-<!--                              Started mapping on |	Jul 25 13:38:59 -->
-<!--                                     Finished on |	Jul 25 13:39:03 -->
-<!--        Mapping speed, Million of reads per hour |	215.88 -->
-
-<!--                           Number of input reads |	239866 -->
-<!--                       Average input read length |	49 -->
-<!--                                     UNIQUE READS: -->
-<!--                    Uniquely mapped reads number |	238305 -->
-<!--                         Uniquely mapped reads % |	99.35% -->
-<!--                           Average mapped length |	48.84 -->
-<!--                        Number of splices: Total |	43900 -->
-<!--             Number of splices: Annotated (sjdb) |	43566 -->
-<!--                        Number of splices: GT/AG |	43729 -->
-<!--                        Number of splices: GC/AG |	171 -->
-<!--                        Number of splices: AT/AC |	0 -->
-<!--                Number of splices: Non-canonical |	0 -->
-<!--                       Mismatch rate per base, % |	0.22% -->
-<!--                          Deletion rate per base |	0.01% -->
-<!--                         Deletion average length |	1.98 -->
-<!--                         Insertion rate per base |	0.00% -->
-<!--                        Insertion average length |	1.37 -->
-<!--                              MULTI-MAPPING READS: -->
-<!--         Number of reads mapped to multiple loci |	0 -->
-<!--              % of reads mapped to multiple loci |	0.00% -->
-<!--         Number of reads mapped to too many loci |	1552 -->
-<!--              % of reads mapped to too many loci |	0.65% -->
-<!--                                   UNMAPPED READS: -->
-<!--        % of reads unmapped: too many mismatches |	0.00% -->
-<!--                  % of reads unmapped: too short |	0.00% -->
-<!--                      % of reads unmapped: other |	0.00% -->
-<!--                                   CHIMERIC READS: -->
-<!--                        Number of chimeric reads |	0 -->
-<!--                             % of chimeric reads |	0.00% -->
-<!-- ``` -->
+The BDS code snippet for the sample KO01 will look like:
 
 
+```bash
+$ grep -A1 run.alignRead.star.BK-AA-4_S14_L007_R355.sh Submit_CRI-BIO-646-BMB-RKeenan.bds
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/BK-AA-4_S14_L007_R355/BK-AA-4_S14_L007_R355.star.bam' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180216_K00242_0355_AHT7NTBBXX-RKeenan-AA-RS10/FastQ/BK-AA-4_S14_L007_R1_001.fastq.gz' ], cpus := 4, mem := 64*G, timeout := 72*hour, taskName := "star.BK-AA-4_S14_L007_R355") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alignRead.star.BK-AA-4_S14_L007_R355.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/BK-AA-4_S14_L007_R355/BK-AA-4_S14_L007_R355.star.bam' ] )
+```
 
-<!-- ### <a name="AlnQC"/>Step 2.2: Alignment QC | [Top](#Top) -->
+This code chunk will invoke the bash script RNAseq/shell_scripts/**`run.alignRead.star.BK-AA-4_S14_L007_R355.sh`** to execute STAR on the KO01(BK-AA-4_S14_L007_R355) sequencing library.
+
+After the completion of the entire pipeline, you can check the alignment result of each individual libraries; for instance, the result of KO01(BK-AA-4_S14_L007_R355) will be as follows.
 
 
-<!-- In this step, the pipeline will conduct a QC on alignment result. -->
+```bash
+$ tree RNAseq/Aln/star/KO01/BK-AA-4_S14_L007_R355
+RNAseq/Aln/star/KO01/BK-AA-4_S14_L007_R355
+|-- BK-AA-4_S14_L007_R355.star.Aligned.sortedByCoord.out.bam
+|-- BK-AA-4_S14_L007_R355.star.Log.final.out
+|-- BK-AA-4_S14_L007_R355.star.Log.out
+|-- BK-AA-4_S14_L007_R355.star.Log.progress.out
+|-- BK-AA-4_S14_L007_R355.star.SJ.out.tab
+|-- BK-AA-4_S14_L007_R355.star.Unmapped.out.mate1
+|-- BK-AA-4_S14_L007_R355.star.bai
+|-- BK-AA-4_S14_L007_R355.star.bam -> BK-AA-4_S14_L007_R355.star.Aligned.sortedByCoord.out.bam
+`-- run.alignRead.star.BK-AA-4_S14_L007_R355.log
+```
 
-<!-- The BDS code snippets for the sample KO01 will look like: -->
+You can check a log file (e.g., **RNAseq/Aln/star/KO01/`BK-AA-4_S14_L007_R355/BK-AA-4_S14_L007_R355.star.Log.final.out`**) for more alignment information provided by STAR.
 
-<!-- ```{r, engine='bash', eval=FALSE} -->
-<!-- $ grep -A1 run.alnQC.*.star.KO01.*.sh CRI-BIO-646/CRI-BIO-646/Submit_RNAseq.CRI-BIO-646.bds -->
-<!-- dep( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics.pdf' ] <- [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Aln/star/KO01/KO01.star.bai' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "picard.star.KO01") sys bash /home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/shell_scripts/run.alnQC.picard.star.KO01.CollectRnaSeqMetrics.sh; sleep 2 -->
-<!-- goal( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics.pdf' ] ) -->
-<!-- -- -->
-<!-- dep( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.xls', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.r', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.pdf' ] <- [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Aln/star/KO01/KO01.star.bai' ], cpus := 1, mem := 8*G, timeout := 72*hour, taskName := "rseqc.star.KO01") sys bash /home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/shell_scripts/run.alnQC.rseqc.star.KO01.clipping_profile.py.sh; sleep 2 -->
-<!-- goal( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.xls', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.r', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.pdf' ] ) -->
-<!-- -- -->
-<!-- dep( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.infer_experiment.txt' ] <- [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Aln/star/KO01/KO01.star.bai' ], cpus := 1, mem := 8*G, timeout := 72*hour, taskName := "rseqc.star.KO01") sys bash /home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/shell_scripts/run.alnQC.rseqc.star.KO01.infer_experiment.py.sh; sleep 2 -->
-<!-- goal( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.infer_experiment.txt' ] ) -->
-<!-- -- -->
-<!-- dep( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.eRPKM.xls', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.rawCount.xls', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.saturation.r' ] <- [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Aln/star/KO01/KO01.star.bai' ], cpus := 1, mem := 8*G, timeout := 72*hour, taskName := "rseqc.star.KO01") sys bash /home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/shell_scripts/run.alnQC.rseqc.star.KO01.RPKM_saturation.py.sh; sleep 2 -->
-<!-- goal( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.eRPKM.xls', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.rawCount.xls', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.saturation.r' ] ) -->
-<!-- ``` -->
 
-<!-- This code chunk will invoke few bash scripts (e.g., CRI-BIO-646/CRI-BIO-646/RNAseq/shell_scripts/**`run.alnQC.picard.star.KO01.CollectRnaSeqMetrics.sh`**, **`run.alnQC.rseqc.star.KO01.clipping_profile.py.sh`**, **`run.alnQC.rseqc.star.KO01.infer_experiment.py.sh`**, and **`run.alnQC.rseqc.star.KO01.RPKM_saturation.py.sh`**) to execute alignment QC tools (i.e., Picard and RSeQC) on the sample KO01. -->
+```bash
+$ cat RNAseq/Aln/star/KO01/SRR1205282/SRR1205282.star.Log.final.out
+                                 Started job on |	Nov 07 12:19:19
+                             Started mapping on |	Nov 07 12:19:34
+                                    Finished on |	Nov 07 12:21:59
+       Mapping speed, Million of reads per hour |	430.40
 
-<!-- After the completion of the entire pipeline, you can check the alignment QC results of each individual samples; for instance, the results of KO01 will be as follows. -->
+                          Number of input reads |	17335560
+                      Average input read length |	50
+                                    UNIQUE READS:
+                   Uniquely mapped reads number |	14809963
+                        Uniquely mapped reads % |	85.43%
+                          Average mapped length |	49.84
+                       Number of splices: Total |	2272172
+            Number of splices: Annotated (sjdb) |	2259453
+                       Number of splices: GT/AG |	2249028
+                       Number of splices: GC/AG |	19534
+                       Number of splices: AT/AC |	2520
+               Number of splices: Non-canonical |	1090
+                      Mismatch rate per base, % |	0.20%
+                         Deletion rate per base |	0.00%
+                        Deletion average length |	1.44
+                        Insertion rate per base |	0.00%
+                       Insertion average length |	1.28
+                             MULTI-MAPPING READS:
+        Number of reads mapped to multiple loci |	0
+             % of reads mapped to multiple loci |	0.00%
+        Number of reads mapped to too many loci |	2403663
+             % of reads mapped to too many loci |	13.87%
+                                  UNMAPPED READS:
+       % of reads unmapped: too many mismatches |	0.00%
+                 % of reads unmapped: too short |	0.56%
+                     % of reads unmapped: other |	0.15%
+                                  CHIMERIC READS:
+                       Number of chimeric reads |	0
+                            % of chimeric reads |	0.00%
+```
 
-<!-- ```{r, engine='bash', eval=FALSE} -->
-<!-- $ ls CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/*/star/KO01 -->
-<!-- CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/picard/star/KO01: -->
-<!-- KO01.star.picard.RNA_Metrics  KO01.star.picard.RNA_Metrics.pdf  run.alnQC.picard.star.KO01.CollectRnaSeqMetrics.log  tmp -->
 
-<!-- CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/rseqc/star/KO01: -->
-<!-- KO01.star.pdfseqc.saturation.pdf      KO01.star.rseqc.eRPKM.xls             run.alnQC.rseqc.star.KO01.RPKM_saturation.py.log -->
-<!-- KO01.star.rseqc.clipping_profile.pdf  KO01.star.rseqc.infer_experiment.txt  run.alnQC.rseqc.star.KO01.clipping_profile.py.log -->
-<!-- KO01.star.rseqc.clipping_profile.r    KO01.star.rseqc.rawCount.xls          tmp -->
-<!-- KO01.star.rseqc.clipping_profile.xls  KO01.star.rseqc.saturation.r -->
-<!-- ``` -->
 
-<!-- You can check alignment statistics (e.g., **CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/picard/star/KO01/`KO01.star.picard.RNA_Metrics`**) for more information provided by Picard. -->
+### <a name="AlnQC"/>Step 2.2: Alignment QC | [Top](#Top)
 
-<!-- ```{r, engine='bash', eval=FALSE} -->
-<!-- $ head CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics -->
-<!-- ## htsjdk.samtools.metrics.StringHeader -->
-<!-- # picard.analysis.CollectRnaSeqMetrics REF_FLAT=/group/bioinformatics/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/reference/GRCh38.primary_Gencode24_50bp_chr11/gencode.v24.primary_assembly.annotation.chr11.refFlat.txt RIBOSOMAL_INTERVALS=/group/bioinformatics/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/reference/GRCh38.primary_Gencode24_50bp_chr11/gencode.v24.primary_assembly.annotation.chr11.rRNA.interval_list STRAND_SPECIFICITY=NONE CHART_OUTPUT=/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics.pdf METRIC_ACCUMULATION_LEVEL=[SAMPLE, ALL_READS] INPUT=/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Aln/star/KO01/KO01.star.bam OUTPUT=/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics TMP_DIR=[/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/picard/star/KO01/tmp]    MINIMUM_LENGTH=500 RRNA_FRAGMENT_PERCENTAGE=0.8 ASSUME_SORTED=true STOP_AFTER=0 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json -->
-<!-- ## htsjdk.samtools.metrics.StringHeader -->
-<!-- # Started on: Wed Jul 25 13:41:44 CDT 2018 -->
 
-<!-- ## METRICS CLASS	picard.analysis.RnaSeqMetrics -->
-<!-- PF_BASES	PF_ALIGNED_BASES	RIBOSOMAL_BASES	CODING_BASES	UTR_BASES	INTRONIC_BASES	INTERGENIC_BASES	IGNORED_READS	CORRECT_STRAND_READS	INCORRECT_STRAND_READS	PCT_RIBOSOMAL_BASES	PCT_CODING_BASES	PCT_UTR_BASES	PCT_INTRONIC_BASES	PCT_INTERGENIC_BASES	PCT_MRNA_BASES	PCT_USABLE_BASES	PCT_CORRECT_STRAND_READS	MEDIAN_CV_COVERAGE	MEDIAN_5PRIME_BIAS	MEDIAN_3PRIME_BIAS	MEDIAN_5PRIME_TO_3PRIME_BIAS	SAMPLE	LIBRARY	READ_GROUP -->
-<!-- 11676945	11638066	0	6586023	4106888	849952	95203	0	0	0	0	0.565904	0.352884	0.073032	0.008180.918788	0.915728	0	0.522396	0.602183	0.758017	0.701572 -->
-<!-- 11676945	11638066	0	6586023	4106888	849952	95203	0	0	0	0	0.565904	0.352884	0.073032	0.008180.918788	0.915728	0	0.522396	0.602183	0.758017	0.701572	unknown -->
-<!-- ``` -->
+In this step, the pipeline will conduct a QC on alignment result.
 
-<!-- Or, the respective coverage plot of the sample KO01 produced by Picard will be as follows. -->
+The BDS code snippets for the sample KO01 will look like:
 
-<!-- <img src="IMG/KO01.star.picard.RNA_Metrics.png" alt="KO01_coverage"  width="600" height="600"> -->
 
-<!-- There are three alignment measurements performed using [RSeQC](http://rseqc.sourceforge.net). -->
+```bash
+$ grep -A1 run.alnQC.*.star.KO01.*.sh Submit_CRI-BIO-646-BMB-RKeenan.bds
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics.pdf' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/KO01.star.bai' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "picard.star.KO01") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.picard.star.KO01.CollectRnaSeqMetrics.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics.pdf' ] )
+--
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.xls', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.r', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.pdf' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/KO01.star.bai' ], cpus := 8, mem := 64*G, timeout := 72*hour, taskName := "rseqc.star.KO01") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.rseqc.star.KO01.clipping_profile.py.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.xls', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.r', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.pdf' ] )
+--
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.infer_experiment.txt' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/KO01.star.bai' ], cpus := 8, mem := 64*G, timeout := 72*hour, taskName := "rseqc.star.KO01") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.rseqc.star.KO01.infer_experiment.py.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.infer_experiment.txt' ] )
+```
 
-<!-- 1. [clipping_profile.py](http://rseqc.sourceforge.net/#clipping-profile-py) -->
-<!--     * Calculate the distributions of clipped nucleotides across reads -->
-<!-- 2. [infer_experiment.py](http://rseqc.sourceforge.net/#infer-experiment-py) -->
-<!--     * Use to “guess” how RNA-seq sequencing was configured, particularly how reads were stranded for strand-specific RNA-seq data, through comparing the “strandedness of reads” with the “strandedness of transcripts”. -->
+This code chunk will invoke few bash scripts (e.g., RNAseq/shell_scripts/**`run.alnQC.picard.star.KO01.CollectRnaSeqMetrics.sh`**, **`run.alnQC.rseqc.star.KO01.clipping_profile.py.sh`**, and **`run.alnQC.rseqc.star.KO01.infer_experiment.py.sh`**) to execute alignment QC tools (i.e., Picard and RSeQC) on the sample KO01.
+
+After the completion of the entire pipeline, you can check the alignment QC results of each individual samples; for instance, the results of KO01 will be as follows.
+
+
+```bash
+$ ls RNAseq/AlnQC/*/star/KO01
+RNAseq/AlnQC/picard/star/KO01:
+KO01.star.picard.RNA_Metrics
+KO01.star.picard.RNA_Metrics.pdf
+run.alnQC.picard.star.KO01.CollectRnaSeqMetrics.log
+tmp
+
+RNAseq/AlnQC/rseqc/star/KO01:
+KO01.star.rseqc.clipping_profile.pdf
+KO01.star.rseqc.clipping_profile.r
+KO01.star.rseqc.clipping_profile.xls
+KO01.star.rseqc.infer_experiment.txt
+run.alnQC.rseqc.star.KO01.clipping_profile.py.log
+tmp
+```
+
+You can check alignment statistics (e.g., **RNAseq/AlnQC/picard/star/KO01/`KO01.star.picard.RNA_Metrics`**) for more information provided by Picard.
+
+
+```bash
+$ head RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics
+## htsjdk.samtools.metrics.StringHeader
+# picard.analysis.CollectRnaSeqMetrics REF_FLAT=/gpfs/data/bioinformatics/cri_rnaseq_2018/example/references/v28_92_GRCh38.p12/genes.refFlat.txt RIBOSOMAL_INTERVALS=/gpfs/data/bioinformatics/cri_rnaseq_2018/example/references/v28_92_GRCh38.p12/GRCh38_rRNA.bed.interval_list STRAND_SPECIFICITY=SECOND_READ_TRANSCRIPTION_STRAND CHART_OUTPUT=/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics.pdf METRIC_ACCUMULATION_LEVEL=[SAMPLE, ALL_READS] INPUT=/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/KO01.star.bam OUTPUT=/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics TMP_DIR=[/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO01/tmp]    MINIMUM_LENGTH=500 RRNA_FRAGMENT_PERCENTAGE=0.8 ASSUME_SORTED=true STOP_AFTER=0 VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json
+## htsjdk.samtools.metrics.StringHeader
+# Started on: Wed Nov 07 12:32:15 CST 2018
+
+## METRICS CLASS	picard.analysis.RnaSeqMetrics
+PF_BASES	PF_ALIGNED_BASES	RIBOSOMAL_BASES	CODING_BASES	UTR_BASES	INTRONIC_BASES	INTERGENIC_BASES	IGNORED_READS	CORRECT_STRAND_READS	INCORRECT_STRAND_READS	PCT_RIBOSOMAL_BASES	PCT_CODING_BASES	PCT_UTR_BASES	PCT_INTRONIC_BASES	PCT_INTERGENIC_BASES	PCT_MRNA_BASES	PCT_USABLE_BASES	PCT_CORRECT_STRAND_READS	MEDIAN_CV_COVERAGE	MEDIAN_5PRIME_BIAS	MEDIAN_3PRIME_BIAS	MEDIAN_5PRIME_TO_3PRIME_BIAS	SAMPLE	LIBRARY	READ_GROUP
+1582833150	1577842710	334200	876931136	608664079	71989244	19924828	0	4418837	102189	0.000212	0.555779	0.385757	0.045625	0.012628	0.941536	0.938567	0.977397	0.904811	0.026924	0.99656	0.041207
+1582833150	1577842710	334200	876931136	608664079	71989244	19924828	0	4418837	102189	0.000212	0.555779	0.385757	0.045625	0.012628	0.941536	0.938567	0.977397	0.904811	0.026924	0.99656	0.041207	unknown
+```
+
+Or, the respective coverage plot of the sample KO01 produced by Picard will be as follows.
+
+<img src="IMG/KO01.star.picard.RNA_Metrics.png" alt="KO01_coverage"  width="600" height="600">
+
+There are two alignment measurements performed using [RSeQC](http://rseqc.sourceforge.net).
+
+1. [clipping_profile.py](http://rseqc.sourceforge.net/#clipping-profile-py)
+    * Calculate the distributions of clipped nucleotides across reads
+2. [infer_experiment.py](http://rseqc.sourceforge.net/#infer-experiment-py)
+    * Use to “guess” how RNA-seq sequencing was configured, particularly how reads were stranded for strand-specific RNA-seq data, through comparing the “strandedness of reads” with the “strandedness of transcripts”.
 <!-- 3. [RPKM_saturation.py](http://rseqc.sourceforge.net/#rpkm-saturation-py) -->
 <!--     * Calculate RPKM value using a series of resampled subsets from total RNA reads to check if the current sequencing depth was saturated or not (or if the RPKM values were stable or not) in terms of genes’ expression estimation -->
 
-<!-- The results will be as follows. Please check the [RSeQC](http://rseqc.sourceforge.net) website for more measurements and details. -->
+The results will be as follows. Please check the [RSeQC](http://rseqc.sourceforge.net) website for more measurements and details.
 
-<!-- <img src="IMG/KO01.star.rseqc.clipping_profile.png" alt="KO01_clipping_profile"  width="600" height="600"> -->
+<img src="IMG/KO01.star.rseqc.clipping_profile.png" alt="KO01_clipping_profile"  width="600" height="600">
 
-<!-- ```{r, engine='bash', eval=FALSE} -->
-<!-- $cat CRI-BIO-646/CRI-BIO-646/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.infer_experiment.txt -->
-<!-- ``` -->
-<!-- ```{r, engine='bash', echo=FALSE} -->
-<!-- cat result/KO01.star.rseqc.infer_experiment.txt -->
-<!-- ``` -->
-<!-- <img src="IMG/KO01.star.pdfseqc.saturation.png" alt="KO01_saturation"  width="600" height="600"> -->
+
+```bash
+$cat RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.infer_experiment.txt
+This is SingleEnd Data
+Fraction of reads failed to determine: 0.9675
+Fraction of reads explained by "++,--": 0.0015
+Fraction of reads explained by "+-,-+": 0.0310
+```
+
+```
+## 
+## 
+## This is SingleEnd Data
+## Fraction of reads failed to determine: 0.9675
+## Fraction of reads explained by "++,--": 0.0015
+## Fraction of reads explained by "+-,-+": 0.0310
+```
+<img src="IMG/KO01.star.pdfseqc.saturation.png" alt="KO01_saturation"  width="600" height="600">
 
 
 
@@ -977,29 +996,29 @@ Or, compare your reports to the example reports provided by FastQC for a [Good I
 <!-- The BDS code snippet for the sample KO01 will look like: -->
 
 <!-- ```{r, engine='bash', eval=FALSE} -->
-<!-- $ grep -A1 run.quant.featurecounts.star.KO01.sh CRI-BIO-646/CRI-BIO-646/Submit_RNAseq.CRI-BIO-646.bds -->
-<!-- dep( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count' ] <- [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Aln/star/KO01/KO01.star.bai' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "featurecounts.star.KO01") sys bash /home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/shell_scripts/run.quant.featurecounts.star.KO01.sh; sleep 2 -->
-<!-- goal( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count' ] ) -->
+<!-- $ grep -A1 run.quant.featurecounts.star.KO01.sh Submit_CRI-BIO-646-BMB-RKeenan.bds -->
+<!-- dep( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count' ] <- [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/Aln/star/KO01/KO01.star.bai' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "featurecounts.star.KO01") sys bash /home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/shell_scripts/run.quant.featurecounts.star.KO01.sh; sleep 2 -->
+<!-- goal( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count' ] ) -->
 <!-- ``` -->
 
-<!-- This code chunk will invoke the bash script (e.g., CRI-BIO-646/CRI-BIO-646/RNAseq/shell_scripts/**`run.quant.featurecounts.star.KO01.sh`**) to execute expression quantification tool (i.e., [Subread](http://subread.sourceforge.net/)::[featureCounts](http://bioinf.wehi.edu.au/featureCounts/) on the sample KO01. -->
+<!-- This code chunk will invoke the bash script (e.g., RNAseq/shell_scripts/**`run.quant.featurecounts.star.KO01.sh`**) to execute expression quantification tool (i.e., [Subread](http://subread.sourceforge.net/)::[featureCounts](http://bioinf.wehi.edu.au/featureCounts/) on the sample KO01. -->
 
 <!-- After the completion of the entire pipeline, you can check the quantification results of each individual samples; for instance, the results of KO01 will be as follows. -->
 
 <!-- ```{r, engine='bash', eval=FALSE} -->
-<!-- $ tree CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/KO01 -->
-<!-- CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/KO01 -->
+<!-- $ tree RNAseq/Quantification/featurecounts/star/KO01 -->
+<!-- RNAseq/Quantification/featurecounts/star/KO01 -->
 <!-- |-- KO01.star.featurecounts.count -->
 <!-- |-- KO01.star.featurecounts.count.jcounts -->
 <!-- |-- KO01.star.featurecounts.count.summary -->
 <!-- `-- run.quant.featurecounts.star.KO01.log -->
 <!-- ``` -->
 
-<!-- You can check quantification statistics (e.g., **CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/KO01`KO01.star.featurecounts.count.summary`**) for more information provided by [Subread](http://subread.sourceforge.net/)::[featureCounts](http://bioinf.wehi.edu.au/featureCounts/) -->
+<!-- You can check quantification statistics (e.g., **RNAseq/Quantification/featurecounts/star/KO01`KO01.star.featurecounts.count.summary`**) for more information provided by [Subread](http://subread.sourceforge.net/)::[featureCounts](http://bioinf.wehi.edu.au/featureCounts/) -->
 
 <!-- ```{r, engine='bash', eval=FALSE} -->
-<!-- $ cat CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count.summary -->
-<!-- Status	/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Aln/star/KO01/KO01.star.bam -->
+<!-- $ cat RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count.summary -->
+<!-- Status	/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/Aln/star/KO01/KO01.star.bam -->
 <!-- Assigned	213869 -->
 <!-- Unassigned_Unmapped	0 -->
 <!-- Unassigned_MappingQuality	0 -->
@@ -1017,7 +1036,7 @@ Or, compare your reports to the example reports provided by FastQC for a [Good I
 <!-- Or, the top 10 most abundant genes in the sample KO01 (on chr11) will be as follows. -->
 
 <!-- ```{r, engine='bash', eval=FALSE} -->
-<!-- $ cat <(head -n2 CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count | tail -n+2 | cut -f1,7) <(cut -f1,7 CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count | sort -k2,2nr | head) -->
+<!-- $ cat <(head -n2 RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count | tail -n+2 | cut -f1,7) <(cut -f1,7 RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count | sort -k2,2nr | head) -->
 <!-- ``` -->
 <!-- ```{r, results='hide', echo=FALSE} -->
 <!-- df.count <- read.csv( -->
@@ -1067,18 +1086,18 @@ Or, compare your reports to the example reports provided by FastQC for a [Good I
 <!-- The BDS code snippets for the example dataset will look like: -->
 
 <!-- ```{r, engine='bash', eval=FALSE} -->
-<!-- $ grep -A1 run.call.*.featurecounts.star.CRI-BIO-646.sh CRI-BIO-646/CRI-BIO-646/Submit_RNAseq.CRI-BIO-646.bds -->
-<!-- dep( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/DEG/edger/featurecounts/star/CRI-BIO-646.star.featurecounts.edger.count.txt' ] <- [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/KO02/KO02.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/KO03/KO03.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/WT01/WT01.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/WT02/WT02.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/WT03/WT03.star.featurecounts.count' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "edger.featurecounts.star.CRI-BIO-646") sys bash /home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/shell_scripts/run.call.edger.featurecounts.star.CRI-BIO-646.sh; sleep 2 -->
-<!-- goal( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/DEG/edger/featurecounts/star/CRI-BIO-646.star.featurecounts.edger.count.txt' ] ) -->
+<!-- $ grep -A1 run.call.*.featurecounts.star.CRI-BIO-646.sh Submit_CRI-BIO-646-BMB-RKeenan.bds -->
+<!-- dep( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/DEG/edger/featurecounts/star/CRI-BIO-646.star.featurecounts.edger.count.txt' ] <- [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/Quantification/featurecounts/star/KO02/KO02.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/Quantification/featurecounts/star/KO03/KO03.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/Quantification/featurecounts/star/WT01/WT01.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/Quantification/featurecounts/star/WT02/WT02.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/Quantification/featurecounts/star/WT03/WT03.star.featurecounts.count' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "edger.featurecounts.star.CRI-BIO-646") sys bash /home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/shell_scripts/run.call.edger.featurecounts.star.CRI-BIO-646.sh; sleep 2 -->
+<!-- goal( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/DEG/edger/featurecounts/star/CRI-BIO-646.star.featurecounts.edger.count.txt' ] ) -->
 <!-- -- -->
-<!-- dep( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646.star.featurecounts.deseq2.count.txt' ] <- [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/KO02/KO02.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/KO03/KO03.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/WT01/WT01.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/WT02/WT02.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/WT03/WT03.star.featurecounts.count' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "deseq2.featurecounts.star.CRI-BIO-646") sys bash /home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/shell_scripts/run.call.deseq2.featurecounts.star.CRI-BIO-646.sh; sleep 2 -->
-<!-- goal( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646.star.featurecounts.deseq2.count.txt' ] ) -->
+<!-- dep( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646.star.featurecounts.deseq2.count.txt' ] <- [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/Quantification/featurecounts/star/KO02/KO02.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/Quantification/featurecounts/star/KO03/KO03.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/Quantification/featurecounts/star/WT01/WT01.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/Quantification/featurecounts/star/WT02/WT02.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/Quantification/featurecounts/star/WT03/WT03.star.featurecounts.count' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "deseq2.featurecounts.star.CRI-BIO-646") sys bash /home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/shell_scripts/run.call.deseq2.featurecounts.star.CRI-BIO-646.sh; sleep 2 -->
+<!-- goal( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646.star.featurecounts.deseq2.count.txt' ] ) -->
 <!-- -- -->
-<!-- dep( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/DEG/limma/featurecounts/star/CRI-BIO-646.star.featurecounts.limma.count.txt' ] <- [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/KO02/KO02.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/KO03/KO03.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/WT01/WT01.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/WT02/WT02.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/Quantification/featurecounts/star/WT03/WT03.star.featurecounts.count' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "limma.featurecounts.star.CRI-BIO-646") sys bash /home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/shell_scripts/run.call.limma.featurecounts.star.CRI-BIO-646.sh; sleep 2 -->
-<!-- goal( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/DEG/limma/featurecounts/star/CRI-BIO-646.star.featurecounts.limma.count.txt' ] ) -->
+<!-- dep( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/DEG/limma/featurecounts/star/CRI-BIO-646.star.featurecounts.limma.count.txt' ] <- [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/Quantification/featurecounts/star/KO02/KO02.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/Quantification/featurecounts/star/KO03/KO03.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/Quantification/featurecounts/star/WT01/WT01.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/Quantification/featurecounts/star/WT02/WT02.star.featurecounts.count', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/Quantification/featurecounts/star/WT03/WT03.star.featurecounts.count' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "limma.featurecounts.star.CRI-BIO-646") sys bash /home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/shell_scripts/run.call.limma.featurecounts.star.CRI-BIO-646.sh; sleep 2 -->
+<!-- goal( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/DEG/limma/featurecounts/star/CRI-BIO-646.star.featurecounts.limma.count.txt' ] ) -->
 <!-- ``` -->
 
-<!-- This code chunk will invoke few bash scripts (e.g., CRI-BIO-646/CRI-BIO-646/RNAseq/shell_scripts/**`run.call.edger.featurecounts.star.CRI-BIO-646.sh`**, **`run.call.deseq2.featurecounts.star.CRI-BIO-646.sh`**, and **`run.call.limma.featurecounts.star.CRI-BIO-646.sh`**) to execute differential expression (DE) analysis using three the state-of-the-art tools  (i.e., [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html), and [limma](https://bioconductor.org/packages/release/bioc/html/limma.html)) on the example dataset of six samples from KO01 to WT03. -->
+<!-- This code chunk will invoke few bash scripts (e.g., RNAseq/shell_scripts/**`run.call.edger.featurecounts.star.CRI-BIO-646.sh`**, **`run.call.deseq2.featurecounts.star.CRI-BIO-646.sh`**, and **`run.call.limma.featurecounts.star.CRI-BIO-646.sh`**) to execute differential expression (DE) analysis using three the state-of-the-art tools  (i.e., [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html), and [limma](https://bioconductor.org/packages/release/bioc/html/limma.html)) on the example dataset of six samples from KO01 to WT03. -->
 
 
 <!-- There are three DE analysis tools used in the current pipeline, including -->
@@ -1090,8 +1109,8 @@ Or, compare your reports to the example reports provided by FastQC for a [Good I
 <!-- After the completion of the entire pipeline, you can check the calling results of each individual methods; for instance, the analysis results of the example dataset will be as follows. -->
 
 <!-- ```{r, engine='bash', eval=FALSE} -->
-<!-- $ ls CRI-BIO-646/CRI-BIO-646/RNAseq/DEG/*/featurecounts/star/ -->
-<!-- CRI-BIO-646/CRI-BIO-646/RNAseq/DEG/deseq2/featurecounts/star/: -->
+<!-- $ ls RNAseq/DEG/*/featurecounts/star/ -->
+<!-- RNAseq/DEG/deseq2/featurecounts/star/: -->
 <!-- CRI-BIO-646.star.featurecounts.deseq2.RData -->
 <!-- CRI-BIO-646.star.featurecounts.deseq2.count.ntd.meanSdPlot.pdf -->
 <!-- CRI-BIO-646.star.featurecounts.deseq2.count.ntd.txt -->
@@ -1106,13 +1125,13 @@ Or, compare your reports to the example reports provided by FastQC for a [Good I
 <!-- CRI-BIO-646.star.featurecounts.deseq2.test.txt -->
 <!-- run.call.deseq2.featurecounts.star.CRI-BIO-646.log -->
 
-<!-- CRI-BIO-646/CRI-BIO-646/RNAseq/DEG/edger/featurecounts/star/: -->
+<!-- RNAseq/DEG/edger/featurecounts/star/: -->
 <!-- CRI-BIO-646.star.featurecounts.edger.RData        CRI-BIO-646.star.featurecounts.edger.plotSmear.pdf -->
 <!-- CRI-BIO-646.star.featurecounts.edger.count.txt    CRI-BIO-646.star.featurecounts.edger.test.DEG.txt -->
 <!-- CRI-BIO-646.star.featurecounts.edger.plotBCV.pdf  CRI-BIO-646.star.featurecounts.edger.test.txt -->
 <!-- CRI-BIO-646.star.featurecounts.edger.plotMA.pdf   run.call.edger.featurecounts.star.CRI-BIO-646.log -->
 
-<!-- CRI-BIO-646/CRI-BIO-646/RNAseq/DEG/limma/featurecounts/star/: -->
+<!-- RNAseq/DEG/limma/featurecounts/star/: -->
 <!-- CRI-BIO-646.star.featurecounts.limma.RData -->
 <!-- CRI-BIO-646.star.featurecounts.limma.count.voom.meanSdPlot.pdf -->
 <!-- CRI-BIO-646.star.featurecounts.limma.count.txt -->
@@ -1123,10 +1142,10 @@ Or, compare your reports to the example reports provided by FastQC for a [Good I
 <!-- run.call.limma.featurecounts.star.CRI-BIO-646.log -->
 <!-- ``` -->
 
-<!-- You can check statistical test results per gene (e.g., **CRI-BIO-646/CRI-BIO-646/RNAseq/DEG/deseq2/featurecounts/star/`CRI-BIO-646.star.featurecounts.deseq2.test.txt`**) for more information generated by each method. -->
+<!-- You can check statistical test results per gene (e.g., **RNAseq/DEG/deseq2/featurecounts/star/`CRI-BIO-646.star.featurecounts.deseq2.test.txt`**) for more information generated by each method. -->
 
 <!-- ```{r, engine='bash', eval=FALSE} -->
-<!-- $ head CRI-BIO-646/CRI-BIO-646/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646.star.featurecounts.deseq2.test.txt -->
+<!-- $ head RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646.star.featurecounts.deseq2.test.txt -->
 <!-- ``` -->
 <!-- ```{r, results='hide', echo=FALSE} -->
 <!-- df.deseq2 <- read.csv( -->
@@ -1174,7 +1193,7 @@ Or, compare your reports to the example reports provided by FastQC for a [Good I
 <!-- >  -->
 <!-- >  -->
 <!-- > To demonstrate the full power of the following analyses, the pipeline will use the pre-run count tables and DEG lists from the full sequencing datasets.   -->
-<!-- > Please make sure that there is no any changes on the metadata file (i.e., <span style="color:red">```CRI-BIO-646/CRI-BIO-646/CRI-BIO-646.metadata.txt```</span>).   -->
+<!-- > Please make sure that there is no any changes on the metadata file (i.e., <span style="color:red">```CRI-BIO-646/CRI-BIO-646.metadata.txt```</span>).   -->
 <!-- > Otherwise, it will be considered as not running for practice and should expect the following results not be the same as shown here.   -->
 <!-- >  -->
 <!-- >  -->
@@ -1189,17 +1208,17 @@ Or, compare your reports to the example reports provided by FastQC for a [Good I
 <!-- The BDS code snippet for the sample KO01 will look like: -->
 
 <!-- ```{r, engine='bash', eval=FALSE} -->
-<!-- $ grep -A1 run.lociStat.featurecounts.star.CRI-BIO-646.sh CRI-BIO-646/CRI-BIO-646/Submit_RNAseq.CRI-BIO-646.bds -->
-<!-- dep( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/LociStat/featurecounts/star/CRI-BIO-646/CRI-BIO-646.star.featurecounts.overlap.txt' ] <- [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646_full/RNAseq/DEG/edger/featurecounts/star/CRI-BIO-646.star.featurecounts.edger.test.DEG.txt', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646_full/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646.star.featurecounts.deseq2.test.DEG.txt', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646_full/RNAseq/DEG/limma/featurecounts/star/CRI-BIO-646.star.featurecounts.limma.test.DEG.txt' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "lociStat.featurecounts.star.CRI-BIO-646") sys bash /home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/shell_scripts/run.lociStat.featurecounts.star.CRI-BIO-646.sh; sleep 2 -->
-<!-- goal( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/LociStat/featurecounts/star/CRI-BIO-646/CRI-BIO-646.star.featurecounts.overlap.txt' ] ) -->
+<!-- $ grep -A1 run.lociStat.featurecounts.star.CRI-BIO-646.sh Submit_CRI-BIO-646-BMB-RKeenan.bds -->
+<!-- dep( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/LociStat/featurecounts/star/CRI-BIO-646.star.featurecounts.overlap.txt' ] <- [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646_full/RNAseq/DEG/edger/featurecounts/star/CRI-BIO-646.star.featurecounts.edger.test.DEG.txt', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646_full/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646.star.featurecounts.deseq2.test.DEG.txt', '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646_full/RNAseq/DEG/limma/featurecounts/star/CRI-BIO-646.star.featurecounts.limma.test.DEG.txt' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "lociStat.featurecounts.star.CRI-BIO-646") sys bash /home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/shell_scripts/run.lociStat.featurecounts.star.CRI-BIO-646.sh; sleep 2 -->
+<!-- goal( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/LociStat/featurecounts/star/CRI-BIO-646.star.featurecounts.overlap.txt' ] ) -->
 <!-- ``` -->
 
-<!-- This code chunk will invoke the bash script (e.g., CRI-BIO-646/CRI-BIO-646/RNAseq/shell_scripts/**`run.lociStat.featurecounts.star.CRI-BIO-646.sh`**) to collect DEG statistics and to make a Venn diagram plot. -->
+<!-- This code chunk will invoke the bash script (e.g., RNAseq/shell_scripts/**`run.lociStat.featurecounts.star.CRI-BIO-646.sh`**) to collect DEG statistics and to make a Venn diagram plot. -->
 
 <!-- After the completion of the entire pipeline, you can check the statistics result of DEGs per method; for instance, the example dataset CRI-BIO-646 will be as follows. -->
 
 <!-- ```{r, engine='bash', eval=FALSE} -->
-<!-- $ grep -A5 'Up/Down regulated DEGs per methods' CRI-BIO-646/CRI-BIO-646/RNAseq/LociStat/featurecounts/star/CRI-BIO-646/run.lociStat.featurecounts.star.CRI-BIO-646.log | tail -n+2 -->
+<!-- $ grep -A5 'Up/Down regulated DEGs per methods' RNAseq/LociStat/featurecounts/star/CRI-BIO-646/run.lociStat.featurecounts.star.CRI-BIO-646.log | tail -n+2 -->
 <!-- INFO [2018-07-25 15:18:08] #STAT:	 Up/Down regulated DEGs per methods -->
 <!--     edger deseq2 limma -->
 <!-- -1    484    409   408 -->
@@ -1210,7 +1229,7 @@ Or, compare your reports to the example reports provided by FastQC for a [Good I
 
 
 <!-- ```{r, engine='bash', eval=FALSE} -->
-<!-- $ cut -f1,2,4 CRI-BIO-646/CRI-BIO-646/RNAseq/LociStat/featurecounts/star/CRI-BIO-646/CRI-BIO-646.star.featurecounts.VennList.txt -->
+<!-- $ cut -f1,2,4 RNAseq/LociStat/featurecounts/star/CRI-BIO-646.star.featurecounts.VennList.txt -->
 <!-- ``` -->
 <!-- ```{r, results='hide', echo=FALSE} -->
 <!-- df.venn.list <- read.csv( -->
@@ -1247,12 +1266,12 @@ Or, compare your reports to the example reports provided by FastQC for a [Good I
 <!-- The BDS code snippet for the sample KO01 will look like: -->
 
 <!-- ```{r, engine='bash', eval=FALSE} -->
-<!-- $ grep -A1 run.quantQC.pca.featurecounts.star.CRI-BIO-646.sh CRI-BIO-646/CRI-BIO-646/Submit_RNAseq.CRI-BIO-646.bds -->
-<!-- dep( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/QuantQC/featurecounts/star/CRI-BIO-646.star.featurecounts.pca.pdf' ] <- [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646_full/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646.star.featurecounts.deseq2.count.txt' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "pca.featurecounts.star.CRI-BIO-646") sys bash /home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/shell_scripts/run.quantQC.pca.featurecounts.star.CRI-BIO-646.sh; sleep 2 -->
-<!-- goal( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/QuantQC/featurecounts/star/CRI-BIO-646.star.featurecounts.pca.pdf' ] ) -->
+<!-- $ grep -A1 run.quantQC.pca.featurecounts.star.CRI-BIO-646.sh Submit_CRI-BIO-646-BMB-RKeenan.bds -->
+<!-- dep( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/QuantQC/featurecounts/star/CRI-BIO-646.star.featurecounts.pca.pdf' ] <- [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646_full/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646.star.featurecounts.deseq2.count.txt' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "pca.featurecounts.star.CRI-BIO-646") sys bash /home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/shell_scripts/run.quantQC.pca.featurecounts.star.CRI-BIO-646.sh; sleep 2 -->
+<!-- goal( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/QuantQC/featurecounts/star/CRI-BIO-646.star.featurecounts.pca.pdf' ] ) -->
 <!-- ``` -->
 
-<!-- This code chunk will invoke the bash script (e.g., CRI-BIO-646/CRI-BIO-646/RNAseq/shell_scripts/**`run.quantQC.pca.featurecounts.star.CRI-BIO-646.sh`**) to make a PCA plot based on the alignment quantification result generated by DESeq2 or one of DE analysis tools. -->
+<!-- This code chunk will invoke the bash script (e.g., RNAseq/shell_scripts/**`run.quantQC.pca.featurecounts.star.CRI-BIO-646.sh`**) to make a PCA plot based on the alignment quantification result generated by DESeq2 or one of DE analysis tools. -->
 
 <!-- After the completion of the entire pipeline, you can check the PCA plot under the folder of `QuantQC/`. -->
 
@@ -1267,12 +1286,12 @@ Or, compare your reports to the example reports provided by FastQC for a [Good I
 <!-- The BDS code snippet for the sample KO01 will look like: -->
 
 <!-- ```{r, engine='bash', eval=FALSE} -->
-<!-- $ grep -A1 run.postAna.pheatmap.featurecounts.star.CRI-BIO-646.sh CRI-BIO-646/CRI-BIO-646/Submit_RNAseq.CRI-BIO-646.bds -->
-<!-- dep( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/PostAna/pheatmap/featurecounts/star/CRI-BIO-646/CRI-BIO-646.star.featurecounts.heatmap.pdf' ] <- [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/LociStat/featurecounts/star/CRI-BIO-646/CRI-BIO-646.star.featurecounts.overlap.txt' ], cpus := 1, mem := 8*G, timeout := 72*hour, taskName := "postAna.pheatmap.featurecounts.star.CRI-BIO-646") sys bash /home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/shell_scripts/run.postAna.pheatmap.featurecounts.star.CRI-BIO-646.sh; sleep 2 -->
-<!-- goal( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/PostAna/pheatmap/featurecounts/star/CRI-BIO-646/CRI-BIO-646.star.featurecounts.heatmap.pdf' ] ) -->
+<!-- $ grep -A1 run.postAna.pheatmap.featurecounts.star.CRI-BIO-646.sh Submit_CRI-BIO-646-BMB-RKeenan.bds -->
+<!-- dep( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/PostAna/pheatmap/featurecounts/star/CRI-BIO-646.star.featurecounts.heatmap.pdf' ] <- [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/LociStat/featurecounts/star/CRI-BIO-646.star.featurecounts.overlap.txt' ], cpus := 1, mem := 8*G, timeout := 72*hour, taskName := "postAna.pheatmap.featurecounts.star.CRI-BIO-646") sys bash /home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/shell_scripts/run.postAna.pheatmap.featurecounts.star.CRI-BIO-646.sh; sleep 2 -->
+<!-- goal( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/PostAna/pheatmap/featurecounts/star/CRI-BIO-646.star.featurecounts.heatmap.pdf' ] ) -->
 <!-- ``` -->
 
-<!-- This code chunk will invoke the bash script (e.g., CRI-BIO-646/CRI-BIO-646/RNAseq/shell_scripts/**`run.postAna.pheatmap.featurecounts.star.CRI-BIO-646.sh`**) to make a heat map plot based on the overlapping set of DEGs identified across different DE analysis tools (i.e., [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html), and [limma](https://bioconductor.org/packages/release/bioc/html/limma.html)). -->
+<!-- This code chunk will invoke the bash script (e.g., RNAseq/shell_scripts/**`run.postAna.pheatmap.featurecounts.star.CRI-BIO-646.sh`**) to make a heat map plot based on the overlapping set of DEGs identified across different DE analysis tools (i.e., [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html), and [limma](https://bioconductor.org/packages/release/bioc/html/limma.html)). -->
 
 <!-- After the completion of the entire pipeline, you can check the heat map under the folder of `PostAna/pheatmap`. -->
 
@@ -1288,17 +1307,17 @@ Or, compare your reports to the example reports provided by FastQC for a [Good I
 <!-- The BDS code snippet for the sample KO01 will look like: -->
 
 <!-- ```{r, engine='bash', eval=FALSE} -->
-<!-- $ grep -A1 run.postAna.clusterprofiler.featurecounts.star.CRI-BIO-646.sh CRI-BIO-646/CRI-BIO-646/Submit_RNAseq.CRI-BIO-646.bds -->
-<!-- dep( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/PostAna/clusterprofiler/featurecounts/star/CRI-BIO-646/CRI-BIO-646.star.featurecounts.enrichGO.ALL.txt' ] <- [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/LociStat/featurecounts/star/CRI-BIO-646/CRI-BIO-646.star.featurecounts.overlap.txt' ], cpus := 1, mem := 8*G, timeout := 72*hour, taskName := "postAna.clusterprofiler.featurecounts.star.CRI-BIO-646") sys bash /home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/shell_scripts/run.postAna.clusterprofiler.featurecounts.star.CRI-BIO-646.sh; sleep 2 -->
-<!-- goal( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/CRI-BIO-646/CRI-BIO-646/RNAseq/PostAna/clusterprofiler/featurecounts/star/CRI-BIO-646/CRI-BIO-646.star.featurecounts.enrichGO.ALL.txt' ] ) -->
+<!-- $ grep -A1 run.postAna.clusterprofiler.featurecounts.star.CRI-BIO-646.sh Submit_CRI-BIO-646-BMB-RKeenan.bds -->
+<!-- dep( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/PostAna/clusterprofiler/featurecounts/star/CRI-BIO-646.star.featurecounts.enrichGO.ALL.txt' ] <- [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/LociStat/featurecounts/star/CRI-BIO-646.star.featurecounts.overlap.txt' ], cpus := 1, mem := 8*G, timeout := 72*hour, taskName := "postAna.clusterprofiler.featurecounts.star.CRI-BIO-646") sys bash /home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/shell_scripts/run.postAna.clusterprofiler.featurecounts.star.CRI-BIO-646.sh; sleep 2 -->
+<!-- goal( [ '/home/USER/cri_rnaseq/CRI-BIO-646-MED-YLi-CRIRnaSeqPipeline/RNAseq/PostAna/clusterprofiler/featurecounts/star/CRI-BIO-646.star.featurecounts.enrichGO.ALL.txt' ] ) -->
 <!-- ``` -->
 
-<!-- This code chunk will invoke the bash script (e.g., CRI-BIO-646/CRI-BIO-646/RNAseq/shell_scripts/**`run.postAna.clusterprofiler.featurecounts.star.CRI-BIO-646.shh`**) to conduct enrichment analyses including [GO](http://www.geneontology.org/) and [KEGG](https://www.genome.jp/kegg/) pathway erichment analyses as well as gene set enrichment analysis (GSEA). -->
+<!-- This code chunk will invoke the bash script (e.g., RNAseq/shell_scripts/**`run.postAna.clusterprofiler.featurecounts.star.CRI-BIO-646.shh`**) to conduct enrichment analyses including [GO](http://www.geneontology.org/) and [KEGG](https://www.genome.jp/kegg/) pathway erichment analyses as well as gene set enrichment analysis (GSEA). -->
 
 <!-- After the completion of the entire pipeline, you can check the heat map under the folder of `PostAna/pheatmap`. -->
 
 <!-- ```{r, engine='bash', eval=FALSE} -->
-<!-- $ ls CRI-BIO-646/CRI-BIO-646/RNAseq/PostAna/clusterprofiler/featurecounts/star/CRI-BIO-646/ -->
+<!-- $ ls RNAseq/PostAna/clusterprofiler/featurecounts/star/CRI-BIO-646/ -->
 <!-- CRI-BIO-646.star.featurecounts.enrichGO.ALL.cnetplot.pdf    CRI-BIO-646.star.featurecounts.enrichGSEAGO.ALL.neg001.pdf  CRI-BIO-646.star.featurecounts.enrichKEGG.cnetplot.pdf -->
 <!-- CRI-BIO-646.star.featurecounts.enrichGO.ALL.dotplot.pdf     CRI-BIO-646.star.featurecounts.enrichGSEAGO.ALL.pos001.pdf  CRI-BIO-646.star.featurecounts.enrichKEGG.dotplot.pdf -->
 <!-- CRI-BIO-646.star.featurecounts.enrichGO.ALL.emapplot.pdf    CRI-BIO-646.star.featurecounts.enrichGSEAGO.ALL.txt         CRI-BIO-646.star.featurecounts.enrichKEGG.emapplot.pdf -->
