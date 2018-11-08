@@ -17,7 +17,7 @@ pipeline:
       adapter_pe: AGATCGGAAGAGCGGTTCAG,AGATCGGAAGAGCGTCGTGT
       adapter_se: AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA
       fastq_format: 33
-      genome_assembly: grch38
+      genome_assembly: hg38
       min_base_qual: 20
       min_map_qual: 0
       module_source: ~

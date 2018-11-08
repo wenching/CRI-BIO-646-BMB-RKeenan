@@ -1,0 +1,17 @@
+Package: CRIRNAseq
+Version: 0.0.1
+Title: Illumina RNA-seq Data Analysis with the CRI HPC
+Authors@R: person("Wen-Ching", "Chan", email = "wchan10@bsd.uchicago.edu",
+                  role = c("aut", "cre"))
+Description: Illumina RNA-seq Data Analysis with the CRI HPC
+Depends: R (>= 3.1.0)
+Suggests: 
+	BiocStyle, 
+	knitr, 
+	rmarkdown
+License: GPL-2 | file LICENSE
+LazyData: true
+VignetteBuilder: knitr
+RoxygenNote: 6.0.1.9000
+Roxygen: list(markdown = TRUE)
+Encoding: UTF-8
