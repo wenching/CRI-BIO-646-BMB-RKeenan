@@ -25,6 +25,11 @@ This repository contains the following items:
 ### Installing
 
 ```bash
+# CAUTION
+
+**THIS PACKAGE IS LARGE, PLEASE DO NOT DOWNLOAD THIS PIPELINE TO YOUR HOME DIRECTORY**
+**USE OTHER LOCATION LIKE /gpfs/data/bioinformatics/username**
+
 # download the package
 wget ftp://logia.cri.uchicago.edu/bioinformatics/tutorials/Nov2018/CRI-BIO-646-BMB-RKeenan.tgz
 # Or, copy directly from HPC
