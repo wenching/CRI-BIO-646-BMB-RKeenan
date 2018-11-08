@@ -221,7 +221,7 @@ def infer_experiment(args, sw_cfg, task_cfg):
          module,
          task_cfg_module['in_file_path_list'][0],
          task_cfg_reference['anno_bed'],
-         2000,
+         200000,
          30,
          task_cfg_module['out_file_path_list'][0]
      ))
