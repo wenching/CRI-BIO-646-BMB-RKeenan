@@ -425,8 +425,6 @@ The login procedure varies slightly depending on whether you use a Mac/Unix/Linu
         ```bash
         $ pwd
         /home/username
-        $ cd /gpfs/data/bioinformatics/username; pwd
-        /gpfs/data/bioinformatics/username
         ```
     2. Instead of downloading the pipeline package to your local home directory, use other location like /gpfs/data/bioinformatics/username
         
