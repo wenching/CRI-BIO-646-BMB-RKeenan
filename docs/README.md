@@ -413,12 +413,26 @@ The login procedure varies slightly depending on whether you use a Mac/Unix/Linu
 
         > Make sure that you replace **_<span style="color:red">`username`</span>_** with your login name.
 
+>  
+> - **<span style="color:red">CAUTION</span>**
+>     - THIS PACKAGE IS LARGE, PLEASE DO NOT DOWNLOAD IT TO YOUR HOME DIRECTORY
+>     - USE OTHER LOCATION LIKE /gpfs/data/bioinformatics/username
+>  
+
 * Set up a tutorial directory  
-    1. Now you should be in your home directory after logging in  
+    1. You should be in your home directory after logging in  
         
         ```bash
         $ pwd
         /home/username
+        $ cd /gpfs/data/bioinformatics/username; pwd
+        /gpfs/data/bioinformatics/username
+        ```
+    2. Instead of downloading the pipeline package to your local home directory, use other location like /gpfs/data/bioinformatics/username
+        
+        ```bash
+        $ cd /gpfs/data/bioinformatics/username; pwd
+        /gpfs/data/bioinformatics/username
         ```
 
 * Download the pipeline package  
@@ -803,8 +817,8 @@ The BDS code snippet for the sample KO01 will look like:
 
 ```bash
 $ grep -A1 run.RawReadQC.FastQC.BK-AA-4_S14_L007_R355.sh Submit_*.bds
-dep( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/KO01/BK-AA-4_S14_L007_R355/BK-AA-4_S14_L007_R1_001_fastqc.zip' ] <- [ '/home/username/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180216_K00242_0355_AHT7NTBBXX-RKeenan-AA-RS10/FastQ/BK-AA-4_S14_L007_R1_001.fastq.gz' ], cpus := 1, mem := 16*G, timeout := 72*hour, taskName := "FastQC.BK-AA-4_S14_L007_R355") sys bash /home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.RawReadQC.FastQC.BK-AA-4_S14_L007_R355.sh; sleep 2
-goal( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/KO01/BK-AA-4_S14_L007_R355/BK-AA-4_S14_L007_R1_001_fastqc.zip' ] )
+dep( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/KO01/BK-AA-4_S14_L007_R355/BK-AA-4_S14_L007_R1_001_fastqc.zip' ] <- [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180216_K00242_0355_AHT7NTBBXX-RKeenan-AA-RS10/FastQ/BK-AA-4_S14_L007_R1_001.fastq.gz' ], cpus := 1, mem := 16*G, timeout := 72*hour, taskName := "FastQC.BK-AA-4_S14_L007_R355") sys bash /gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.RawReadQC.FastQC.BK-AA-4_S14_L007_R355.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/KO01/BK-AA-4_S14_L007_R355/BK-AA-4_S14_L007_R1_001_fastqc.zip' ] )
 ```
 
 This code chunk will invoke the bash script RNAseq/shell_scripts/**`run.RawReadQC.FastQC.BK-AA-4_S14_L007_R355.sh`** to execute FastQC on the KO01(BK-AA-1_S11_L007_R355) sequencing library.
@@ -829,8 +843,8 @@ The BDS code snippet for the sample KO01 will look like:
 
 ```bash
 $ grep -A1 run.alignRead.star.BK-AA-4_S14_L007_R355.sh Submit_*.bds
-dep( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/BK-AA-4_S14_L007_R355/BK-AA-4_S14_L007_R355.star.bam' ] <- [ '/home/username/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180216_K00242_0355_AHT7NTBBXX-RKeenan-AA-RS10/FastQ/BK-AA-4_S14_L007_R1_001.fastq.gz' ], cpus := 4, mem := 64*G, timeout := 72*hour, taskName := "star.BK-AA-4_S14_L007_R355") sys bash /home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alignRead.star.BK-AA-4_S14_L007_R355.sh; sleep 2
-goal( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/BK-AA-4_S14_L007_R355/BK-AA-4_S14_L007_R355.star.bam' ] )
+dep( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/BK-AA-4_S14_L007_R355/BK-AA-4_S14_L007_R355.star.bam' ] <- [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180216_K00242_0355_AHT7NTBBXX-RKeenan-AA-RS10/FastQ/BK-AA-4_S14_L007_R1_001.fastq.gz' ], cpus := 4, mem := 64*G, timeout := 72*hour, taskName := "star.BK-AA-4_S14_L007_R355") sys bash /gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alignRead.star.BK-AA-4_S14_L007_R355.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/BK-AA-4_S14_L007_R355/BK-AA-4_S14_L007_R355.star.bam' ] )
 ```
 
 This code chunk will invoke the bash script RNAseq/shell_scripts/**`run.alignRead.star.BK-AA-4_S14_L007_R355.sh`** to execute STAR on the KO01(BK-AA-4_S14_L007_R355) sequencing library.
@@ -908,14 +922,14 @@ The BDS code snippets for the sample KO01 will look like:
 
 ```bash
 $ grep -A1 run.alnQC.*.star.KO01.*.sh Submit_*.bds
-dep( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics.pdf' ] <- [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/KO01.star.bai' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "picard.star.KO01") sys bash /home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.picard.star.KO01.CollectRnaSeqMetrics.sh; sleep 2
-goal( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics.pdf' ] )
+dep( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics.pdf' ] <- [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/KO01.star.bai' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "picard.star.KO01") sys bash /gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.picard.star.KO01.CollectRnaSeqMetrics.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics.pdf' ] )
 --
-dep( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.xls', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.r', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.pdf' ] <- [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/KO01.star.bai' ], cpus := 8, mem := 64*G, timeout := 72*hour, taskName := "rseqc.star.KO01") sys bash /home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.rseqc.star.KO01.clipping_profile.py.sh; sleep 2
-goal( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.xls', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.r', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.pdf' ] )
+dep( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.xls', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.r', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.pdf' ] <- [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/KO01.star.bai' ], cpus := 8, mem := 64*G, timeout := 72*hour, taskName := "rseqc.star.KO01") sys bash /gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.rseqc.star.KO01.clipping_profile.py.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.xls', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.r', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.pdf' ] )
 --
-dep( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.infer_experiment.txt' ] <- [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/KO01.star.bai' ], cpus := 8, mem := 64*G, timeout := 72*hour, taskName := "rseqc.star.KO01") sys bash /home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.rseqc.star.KO01.infer_experiment.py.sh; sleep 2
-goal( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.infer_experiment.txt' ] )
+dep( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.infer_experiment.txt' ] <- [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/KO01.star.bai' ], cpus := 8, mem := 64*G, timeout := 72*hour, taskName := "rseqc.star.KO01") sys bash /gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.rseqc.star.KO01.infer_experiment.py.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.infer_experiment.txt' ] )
 ```
 
 This code chunk will invoke few bash scripts (e.g., RNAseq/shell_scripts/**`run.alnQC.picard.star.KO01.CollectRnaSeqMetrics.sh`**, **`run.alnQC.rseqc.star.KO01.clipping_profile.py.sh`**, and **`run.alnQC.rseqc.star.KO01.infer_experiment.py.sh`**) to execute alignment QC tools (i.e., [Picard](https://broadinstitute.github.io/picard/) and [RSeQC](http://rseqc.sourceforge.net/)) on the sample KO01.
@@ -1002,8 +1016,8 @@ The BDS code snippet for the sample KO01 will look like:
 
 ```bash
 $ grep -A1 run.quant.featurecounts.star.KO01.sh Submit_*.bds
-dep( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count' ] <- [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/KO01.star.bai' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "featurecounts.star.KO01") sys bash /home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.quant.featurecounts.star.KO01.sh; sleep 2
-goal( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count' ] )
+dep( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count' ] <- [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/KO01.star.bai' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "featurecounts.star.KO01") sys bash /gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.quant.featurecounts.star.KO01.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count' ] )
 ```
 
 This code chunk will invoke the bash script (e.g., RNAseq/shell_scripts/**`run.quant.featurecounts.star.KO01.sh`**) to execute expression quantification tool (i.e., [Subread](http://subread.sourceforge.net/)::[featureCounts](http://bioinf.wehi.edu.au/featureCounts/) on the sample KO01.
@@ -1169,14 +1183,14 @@ The BDS code snippets for the example dataset will look like:
 
 ```bash
 $ grep -A1 run.call.*.featurecounts.star.*.sh Submit_*.bds
-dep( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/edger/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.edger.count.txt', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/edger/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.edger.test.DEG.txt' ] <- [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT01/WT01.star.featurecounts.count', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT02/WT02.star.featurecounts.count', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT03/WT03.star.featurecounts.count', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO02/KO02.star.featurecounts.count', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO03/KO03.star.featurecounts.count' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "edger.featurecounts.star.CRI-BIO-646-BMB-RKeenan") sys bash /home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.call.edger.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh; sleep 2
-goal( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/edger/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.edger.count.txt' ] )
+dep( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/edger/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.edger.count.txt', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/edger/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.edger.test.DEG.txt' ] <- [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT01/WT01.star.featurecounts.count', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT02/WT02.star.featurecounts.count', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT03/WT03.star.featurecounts.count', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO02/KO02.star.featurecounts.count', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO03/KO03.star.featurecounts.count' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "edger.featurecounts.star.CRI-BIO-646-BMB-RKeenan") sys bash /gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.call.edger.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/edger/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.edger.count.txt' ] )
 --
-dep( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.deseq2.count.txt', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.deseq2.test.DEG.txt' ] <- [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT01/WT01.star.featurecounts.count', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT02/WT02.star.featurecounts.count', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT03/WT03.star.featurecounts.count', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO02/KO02.star.featurecounts.count', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO03/KO03.star.featurecounts.count' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "deseq2.featurecounts.star.CRI-BIO-646-BMB-RKeenan") sys bash /home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.call.deseq2.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh; sleep 2
-goal( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.deseq2.count.txt' ] )
+dep( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.deseq2.count.txt', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.deseq2.test.DEG.txt' ] <- [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT01/WT01.star.featurecounts.count', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT02/WT02.star.featurecounts.count', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT03/WT03.star.featurecounts.count', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO02/KO02.star.featurecounts.count', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO03/KO03.star.featurecounts.count' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "deseq2.featurecounts.star.CRI-BIO-646-BMB-RKeenan") sys bash /gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.call.deseq2.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.deseq2.count.txt' ] )
 --
-dep( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/limma/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.limma.count.txt', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/limma/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.limma.test.DEG.txt' ] <- [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT01/WT01.star.featurecounts.count', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT02/WT02.star.featurecounts.count', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT03/WT03.star.featurecounts.count', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO02/KO02.star.featurecounts.count', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO03/KO03.star.featurecounts.count' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "limma.featurecounts.star.CRI-BIO-646-BMB-RKeenan") sys bash /home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.call.limma.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh; sleep 2
-goal( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/limma/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.limma.count.txt' ] )
+dep( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/limma/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.limma.count.txt', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/limma/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.limma.test.DEG.txt' ] <- [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT01/WT01.star.featurecounts.count', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT02/WT02.star.featurecounts.count', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT03/WT03.star.featurecounts.count', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO02/KO02.star.featurecounts.count', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO03/KO03.star.featurecounts.count' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "limma.featurecounts.star.CRI-BIO-646-BMB-RKeenan") sys bash /gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.call.limma.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/limma/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.limma.count.txt' ] )
 ```
 
 This code chunk will invoke few bash scripts (e.g., RNAseq/shell_scripts/**`run.call.edger.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh`**, **`run.call.deseq2.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh`**, and **`run.call.limma.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh`**) to execute differential expression (DE) analysis using three the state-of-the-art tools  (i.e., [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html), and [limma](https://bioconductor.org/packages/release/bioc/html/limma.html)) on the example dataset of six samples from KO01 to WT03.
@@ -1404,8 +1418,8 @@ The BDS code snippet for the sample KO01 will look like:
 
 ```bash
 $ grep -A1 run.lociStat.featurecounts.star.*.sh Submit_*.bds
-dep( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/LociStat/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.overlap.txt' ] <- [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/edger/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.edger.test.DEG.txt', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.deseq2.test.DEG.txt', '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/limma/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.limma.test.DEG.txt' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "lociStat.featurecounts.star.CRI-BIO-646-BMB-RKeenan") sys bash /home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.lociStat.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh; sleep 2
-goal( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/LociStat/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.overlap.txt' ] )
+dep( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/LociStat/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.overlap.txt' ] <- [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/edger/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.edger.test.DEG.txt', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.deseq2.test.DEG.txt', '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/limma/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.limma.test.DEG.txt' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "lociStat.featurecounts.star.CRI-BIO-646-BMB-RKeenan") sys bash /gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.lociStat.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/LociStat/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.overlap.txt' ] )
 ```
 
 This code chunk will invoke the bash script (e.g., RNAseq/shell_scripts/**`run.lociStat.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh`**) to collect DEG statistics and to make a Venn diagram plot.
@@ -1418,12 +1432,7 @@ $ grep -A5 'Up/Down regulated DEGs per methods' RNAseq/LociStat/featurecounts/st
 ```
 
 ```
-## INFO [2018-11-07 12:37:07] #STAT:	 Up/Down regulated DEGs per methods
-##     edger deseq2 limma
-## -1   1424   1360  1435
-## 0       0      0     0
-## 1    1413   1360  1412
-## Sum  2837   2720  2847
+## grep: result/run.lociStat.featurecounts.star.*.log: No such file or directory
 ```
 
 
@@ -1497,8 +1506,8 @@ The BDS code snippet for the sample KO01 will look like:
 
 ```bash
 $ grep -A1 run.quantQC.pca.featurecounts.star.*.sh Submit_*.bds
-dep( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/QuantQC/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.pca.pdf' ] <- [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.deseq2.count.txt' ], cpus := 8, mem := 64*G, timeout := 72*hour, taskName := "pca.featurecounts.star.CRI-BIO-646-BMB-RKeenan") sys bash /home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.quantQC.pca.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh; sleep 2
-goal( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/QuantQC/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.pca.pdf' ] )
+dep( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/QuantQC/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.pca.pdf' ] <- [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.deseq2.count.txt' ], cpus := 8, mem := 64*G, timeout := 72*hour, taskName := "pca.featurecounts.star.CRI-BIO-646-BMB-RKeenan") sys bash /gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.quantQC.pca.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/QuantQC/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.pca.pdf' ] )
 ```
 
 This code chunk will invoke the bash script (e.g., RNAseq/shell_scripts/**`run.quantQC.pca.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh`**) to make a PCA plot based on the alignment quantification result generated by [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) or one of DE analysis tools.
@@ -1519,8 +1528,8 @@ The BDS code snippet for the sample KO01 will look like:
 
 ```bash
 $ grep -A1 run.postAna.pheatmap.featurecounts.star.*.sh Submit_*.bds
-dep( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/PostAna/pheatmap/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.heatmap.pdf' ] <- [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/LociStat/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.overlap.txt' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "postAna.pheatmap.featurecounts.star.CRI-BIO-646-BMB-RKeenan") sys bash /home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.postAna.pheatmap.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh; sleep 2
-goal( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/PostAna/pheatmap/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.heatmap.pdf' ] )
+dep( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/PostAna/pheatmap/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.heatmap.pdf' ] <- [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/LociStat/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.overlap.txt' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "postAna.pheatmap.featurecounts.star.CRI-BIO-646-BMB-RKeenan") sys bash /gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.postAna.pheatmap.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/PostAna/pheatmap/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.heatmap.pdf' ] )
 ```
 
 This code chunk will invoke the bash script (e.g., RNAseq/shell_scripts/**`run.postAna.pheatmap.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh`**) to make a heat map plot based on the overlapping set of DEGs identified across different DE analysis tools (i.e., [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html), and [limma](https://bioconductor.org/packages/release/bioc/html/limma.html)).
@@ -1541,8 +1550,8 @@ The BDS code snippet for the projet CRI-BIO-646-BMB-RKeenan will look like:
 
 ```bash
 $ grep -A1 run.postAna.clusterprofiler.featurecounts.star.*.sh Submit_*.bds
-dep( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/PostAna/clusterprofiler/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.enrichGO.ALL.txt' ] <- [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/LociStat/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.overlap.txt' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "postAna.clusterprofiler.featurecounts.star.CRI-BIO-646-BMB-RKeenan") sys bash /home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.postAna.clusterprofiler.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh; sleep 2
-goal( [ '/home/username/CRI-BIO-646-BMB-RKeenan/RNAseq/PostAna/clusterprofiler/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.enrichGO.ALL.txt' ] )
+dep( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/PostAna/clusterprofiler/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.enrichGO.ALL.txt' ] <- [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/LociStat/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.overlap.txt' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "postAna.clusterprofiler.featurecounts.star.CRI-BIO-646-BMB-RKeenan") sys bash /gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.postAna.clusterprofiler.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/username/CRI-BIO-646-BMB-RKeenan/RNAseq/PostAna/clusterprofiler/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.enrichGO.ALL.txt' ] )
 ```
 
 This code chunk will invoke the bash script (e.g., RNAseq/shell_scripts/**`run.postAna.clusterprofiler.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh`**) to conduct enrichment analyses including [GO](http://www.geneontology.org/) and [KEGG](https://www.genome.jp/kegg/) pathway erichment analyses as well as gene set enrichment analysis (GSEA).
