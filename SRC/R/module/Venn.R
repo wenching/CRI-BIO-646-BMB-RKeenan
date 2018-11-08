@@ -25,27 +25,13 @@
 
 
 rm(list = ls())
+print(.libPaths(c("SRC/R/lib/3.5", .libPaths())))
 
 
 # IMPORT logging library
 
 # https://github.com/zatonovo/futile.logger
 
-if(! "futile.logger" %in% rownames(installed.packages())) {
-  if(! "devtools" %in% rownames(installed.packages())) {
-    install.packages(
-      "devtools",
-      dependencies = TRUE,
-      repos = "https://cloud.r-project.org"
-    )
-  }
-  
-  library("devtools")
-  
-  devtools::install_github(
-    repo = "zatonovo/futile.logger"
-  )
-}
 library("futile.logger") # help(package = "futile.logger") # ls(pos = "package:futile.logger")
 
 
@@ -65,13 +51,6 @@ flog.info("PARSE arguments")
 
 # https://docs.python.org/3/howto/argparse.html
 
-if(! "argparse" %in% rownames(installed.packages())) {
-  library("devtools")
-  
-  devtools::install_github(
-    repo = "trevorld/argparse"
-  )
-}
 library("argparse") # help(package = "argparse") # ls(pos = "package:argparse")
 
 v.desc <- c(
@@ -202,16 +181,7 @@ flog.debug("PARSE arguments - DONE")
 
 flog.info("PREPROCESS")
 
-if(! "Biobase" %in% rownames(installed.packages())) {
-  if(! "BiocManager" %in% rownames(installed.packages()))
-    install.packages(
-      "BiocManager",
-      dependencies = TRUE,
-      repos = "https://cloud.r-project.org"
-    )
-    
-  BiocManager::install("Biobase", version = "devel")
-}
+
 library("Biobase")
 
 
@@ -308,34 +278,6 @@ if(b.comp.among.method) {
 flog.debug("PREPROCESS - DONE")
 
 
-if(! "Vennerable" %in% rownames(installed.packages())) {
-  if(! "RBGL" %in% rownames(installed.packages())) {
-    source("http://bioconductor.org/biocLite.R")
-    biocLite("RBGL")
-  }
-  
-  if(! "graph" %in% rownames(installed.packages())) {
-    source("http://bioconductor.org/biocLite.R")
-    biocLite("graph")
-  }
-  
-  if(! "reshape" %in% rownames(installed.packages())) {
-    source("http://bioconductor.org/biocLite.R")
-    biocLite("reshape")
-  }
-  
-  if(! "devtools" %in% rownames(installed.packages())) {
-    install.packages(
-      "devtools",
-      dependencies = TRUE,
-      repos = "https://cloud.r-project.org"
-    )
-  }
-  library("devtools")
-  
-  install_github(repo = 'js229/Vennerable')
-  #browseURL("http://github.com/js229/Vennerable")
-}
 library("Vennerable")
 # ls(pos = "package:Vennerable")
 
@@ -405,14 +347,6 @@ write.table(
 )
 
 
-
-if(! "VennDiagram" %in% rownames(installed.packages())) {
-  install.packages(
-    "VennDiagram",
-    dependencies = TRUE,
-    repos = "https://cloud.r-project.org"
-  )
-}
 library("VennDiagram")
 
 venn.plot <- VennDiagram::venn.diagram(

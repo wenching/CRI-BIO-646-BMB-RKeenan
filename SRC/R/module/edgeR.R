@@ -25,27 +25,13 @@
 
 
 rm(list = ls())
+print(.libPaths(c("SRC/R/lib/3.5", .libPaths())))
 
 
 # IMPORT logging library
 
 # https://github.com/zatonovo/futile.logger
 
-if(! "futile.logger" %in% rownames(installed.packages())) {
-  if(! "devtools" %in% rownames(installed.packages())) {
-    install.packages(
-      "devtools",
-      dependencies = TRUE,
-      repos = "https://cloud.r-project.org"
-    )
-  }
-  
-  library("devtools")
-  
-  devtools::install_github(
-    repo = "zatonovo/futile.logger"
-  )
-}
 library("futile.logger") # help(package = "futile.logger") # ls(pos = "package:futile.logger")
 
 
@@ -65,13 +51,6 @@ flog.info("PARSE arguments")
 
 # https://docs.python.org/3/howto/argparse.html
 
-if(! "argparse" %in% rownames(installed.packages())) {
-  library("devtools")
-  
-  devtools::install_github(
-    repo = "trevorld/argparse"
-  )
-}
 library("argparse") # help(package = "argparse") # ls(pos = "package:argparse")
 
 v.desc <- c(
@@ -303,15 +282,7 @@ flog.debug("PREPROCESS - DONE")
 
 flog.info("edgeR: Empirical Analysis of Digital Gene Expression Data in R")
 
-if(! "edgeR" %in% rownames(installed.packages())) {
-  if(! "BiocManager" %in% rownames(installed.packages()))
-    install.packages(
-      "BiocManager",
-      dependencies = TRUE,
-      repos = "https://cloud.r-project.org"
-    )
-  BiocManager::install("edgeR", version = "devel")
-}
+
 library("edgeR") # help(package = "edgeR") # ls(pos = "package:edgeR")
 
 

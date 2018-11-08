@@ -25,27 +25,13 @@
 
 
 rm(list = ls())
+print(.libPaths(c("SRC/R/lib/3.5", .libPaths())))
 
 
 # IMPORT logging library
 
 # https://github.com/zatonovo/futile.logger
 
-if(! "futile.logger" %in% rownames(installed.packages())) {
-  if(! "devtools" %in% rownames(installed.packages())) {
-    install.packages(
-      "devtools",
-      dependencies = TRUE,
-      repos = "https://cloud.r-project.org"
-    )
-  }
-  
-  library("devtools")
-  
-  devtools::install_github(
-    repo = "zatonovo/futile.logger"
-  )
-}
 library("futile.logger") # help(package = "futile.logger") # ls(pos = "package:futile.logger")
 
 
@@ -65,13 +51,6 @@ flog.info("PARSE arguments")
 
 # https://docs.python.org/3/howto/argparse.html
 
-if(! "argparse" %in% rownames(installed.packages())) {
-  library("devtools")
-  
-  devtools::install_github(
-    repo = "trevorld/argparse"
-  )
-}
 library("argparse") # help(package = "argparse") # ls(pos = "package:argparse")
 
 v.desc <- c(
@@ -251,13 +230,7 @@ flog.info("MAKE PCA plot")
 
 if(all(df.expr >= 0)) df.epxr.log <- log(df.expr + 1)
 
-if(! "FactoMineR" %in% rownames(installed.packages())) {
-  install.packages(
-    "FactoMineR",
-    dependencies = TRUE,
-    repos = "https://cloud.r-project.org"
-  )
-}
+
 library("FactoMineR")
 
 system.time(
@@ -269,14 +242,6 @@ system.time(
 )
 
 
-
-if(! "factoextra" %in% rownames(installed.packages())) {
-  install.packages(
-    "factoextra",
-    dependencies = TRUE,
-    repos = "https://cloud.r-project.org"
-  )
-}
 library("factoextra")
 
 

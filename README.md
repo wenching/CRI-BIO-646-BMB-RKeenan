@@ -37,7 +37,7 @@ tar -zxvf CRI-BIO-646-BMB-RKeenan.tgz
 cd CRI-BIO-646-BMB-RKeenan
 
 # load modules
-$ module purge;module load gcc udunits python/3.6.0 R; module update
+$ module purge;module load gcc udunits python/3.6.0 R/3.5.0; module update
 
 # This step is optional but it will install all necessary R packages ahead.
 # In case the pipeline was terminated due to the failure of R package installation later when running the pipeline.

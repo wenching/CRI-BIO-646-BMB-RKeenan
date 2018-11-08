@@ -25,27 +25,13 @@
 
 
 rm(list = ls())
+print(.libPaths(c("SRC/R/lib/3.5", .libPaths())))
 
 
 # IMPORT logging library
 
 # https://github.com/zatonovo/futile.logger
 
-if(! "futile.logger" %in% rownames(installed.packages())) {
-  if(! "devtools" %in% rownames(installed.packages())) {
-    install.packages(
-      "devtools",
-      dependencies = TRUE,
-      repos = "https://cloud.r-project.org"
-    )
-  }
-  
-  library("devtools")
-  
-  devtools::install_github(
-    repo = "zatonovo/futile.logger"
-  )
-}
 library("futile.logger") # help(package = "futile.logger") # ls(pos = "package:futile.logger")
 
 
@@ -65,13 +51,6 @@ flog.info("PARSE arguments")
 
 # https://docs.python.org/3/howto/argparse.html
 
-if(! "argparse" %in% rownames(installed.packages())) {
-  library("devtools")
-  
-  devtools::install_github(
-    repo = "trevorld/argparse"
-  )
-}
 library("argparse") # help(package = "argparse") # ls(pos = "package:argparse")
 
 v.desc <- c(
@@ -304,15 +283,7 @@ flog.debug("PREPROCESS - DONE")
 
 flog.info("limma: Linear Models for Microarray Data")
 
-if(! "limma" %in% rownames(installed.packages())) {
-  if(! "BiocManager" %in% rownames(installed.packages()))
-    install.packages(
-      "BiocManager",
-      dependencies = TRUE,
-      repos = "https://cloud.r-project.org"
-    )
-  BiocManager::install("limma", version = "devel")
-}
+
 library("limma") # help(package = "limma") # ls(pos = "package:limma")
 
 
@@ -372,15 +343,6 @@ df.meta.tbl$Group <- as.factor(df.meta.tbl$Group)
 mat.design <- stats::model.matrix( ~ 0 + Group, df.meta.tbl)
 
 
-if(! "edgeR" %in% rownames(installed.packages())) {
-  if(! "BiocManager" %in% rownames(installed.packages()))
-    install.packages(
-      "BiocManager",
-      dependencies = TRUE,
-      repos = "https://cloud.r-project.org"
-    )
-  BiocManager::install("edgeR", version = "devel")
-}
 library("edgeR") # help(package = "edgeR") # ls(pos = "package:edgeR")
 
 

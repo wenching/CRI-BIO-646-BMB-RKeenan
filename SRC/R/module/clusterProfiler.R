@@ -24,27 +24,13 @@
 
 
 rm(list = ls())
+print(.libPaths(c("SRC/R/lib/3.5", .libPaths())))
 
 
 # IMPORT logging library
 
 # https://github.com/zatonovo/futile.logger
 
-if(! "futile.logger" %in% rownames(installed.packages())) {
-  if(! "devtools" %in% rownames(installed.packages())) {
-    install.packages(
-      "devtools",
-      dependencies = TRUE,
-      repos = "https://cloud.r-project.org"
-    )
-  }
-  
-  library("devtools")
-  
-  devtools::install_github(
-    repo = "zatonovo/futile.logger"
-  )
-}
 library("futile.logger") # help(package = "futile.logger") # ls(pos = "package:futile.logger")
 
 
@@ -64,13 +50,6 @@ flog.info("PARSE arguments")
 
 # https://docs.python.org/3/howto/argparse.html
 
-if(! "argparse" %in% rownames(installed.packages())) {
-  library("devtools")
-  
-  devtools::install_github(
-    repo = "trevorld/argparse"
-  )
-}
 library("argparse") # help(package = "argparse") # ls(pos = "package:argparse")
 
 v.desc <- c(
@@ -232,67 +211,19 @@ if(args$c.assembly %in% c("grch38", "hg38")) {
 
 
 if(! c.org.db %in% rownames(installed.packages())) {
-  if(! "BiocManager" %in% rownames(installed.packages()))
-    install.packages(
-      "BiocManager",
-      dependencies = TRUE,
-      repos = "https://cloud.r-project.org"
-    )
   BiocManager::install(c.org.db, version = "devel")
 }
 
 if(! c.txdb %in% rownames(installed.packages())) {
-  if(! "BiocManager" %in% rownames(installed.packages()))
-    install.packages(
-      "BiocManager",
-      dependencies = TRUE,
-      repos = "https://cloud.r-project.org"
-    )
   BiocManager::install(c.txdb, version = "devel")
 }
 
-if(! "TxDb.Hsapiens.UCSC.hg19.knownGene" %in% rownames(installed.packages())) {
-  if(! "BiocUpgrade" %in% rownames(installed.packages())) {
-    if(! "BiocManager" %in% rownames(installed.packages()))
-      install.packages(
-        "BiocManager",
-        dependencies = TRUE,
-        repos = "https://cloud.r-project.org"
-      )
-    BiocManager::install("TxDb.Hsapiens.UCSC.hg19.knownGene", version = "devel")
-  }
-  
-  if(! "devtools" %in% rownames(installed.packages())) {
-    install.packages(
-      "devtools",
-      dependencies = TRUE,
-      repos = "https://cloud.r-project.org"
-    )
-  }
-  library(devtools)
-  
-  install_github(
-    "GuangchuangYu/ChIPseeker",
-    build_vignettes = FALSE,
-    repos = BiocInstaller::biocinstallRepos(),
-    dependencies = TRUE
-  )
-}
+
 library("ChIPseeker")
 
 clusterProfiler::idType(OrgDb = c.org.db)
 
 
-
-if(! "KEGGREST" %in% rownames(installed.packages())) {
-  if(! "BiocManager" %in% rownames(installed.packages()))
-    install.packages(
-      "BiocManager",
-      dependencies = TRUE,
-      repos = "https://cloud.r-project.org"
-    )
-  BiocManager::install("KEGGREST", version = "devel")
-}
 library("KEGGREST")
 
 

@@ -25,27 +25,13 @@
 
 
 rm(list = ls())
+print(.libPaths(c("SRC/R/lib/3.5", .libPaths())))
 
 
 # IMPORT logging library
 
 # https://github.com/zatonovo/futile.logger
 
-if(! "futile.logger" %in% rownames(installed.packages())) {
-  if(! "devtools" %in% rownames(installed.packages())) {
-    install.packages(
-      "devtools",
-      dependencies = TRUE,
-      repos = "https://cloud.r-project.org"
-    )
-  }
-  
-  library("devtools")
-  
-  devtools::install_github(
-    repo = "zatonovo/futile.logger"
-  )
-}
 library("futile.logger") # help(package = "futile.logger") # ls(pos = "package:futile.logger")
 
 
@@ -65,13 +51,6 @@ flog.info("PARSE arguments")
 
 # https://docs.python.org/3/howto/argparse.html
 
-if(! "argparse" %in% rownames(installed.packages())) {
-  library("devtools")
-  
-  devtools::install_github(
-    repo = "trevorld/argparse"
-  )
-}
 library("argparse") # help(package = "argparse") # ls(pos = "package:argparse")
 
 v.desc <- c(
@@ -303,15 +282,7 @@ flog.debug("PREPROCESS - DONE")
 
 flog.info("DESeq2: Differential gene expression analysis based on the negative binomial distribution")
 
-if(! "DESeq2" %in% rownames(installed.packages())) {
-  if(! "BiocManager" %in% rownames(installed.packages()))
-    install.packages(
-      "BiocManager",
-      dependencies = TRUE,
-      repos = "https://cloud.r-project.org"
-    )
-  BiocManager::install("DESeq2", version = "devel")
-}
+
 library("DESeq2") # help(package = "DESeq2") # ls(pos = "package:DESeq2")
 
 
@@ -431,23 +402,6 @@ DESeqTransform.vst <- DESeq2::vst(DESeqDS.sizeFact.estiDisp.NBTest, blind = FALS
 DESeqTransform.rld <- DESeq2::rlog(DESeqDS.sizeFact.estiDisp.NBTest, blind = FALSE)
 
 
-if(! "vsn" %in% rownames(installed.packages())) {
-  if(! "hexbin" %in% rownames(installed.packages())) {
-    install.packages(
-      "hexbin",
-      dependencies = TRUE,
-      repos = "https://cloud.r-project.org"
-    )
-  }
-  
-  if(! "BiocManager" %in% rownames(installed.packages()))
-    install.packages(
-      "BiocManager",
-      dependencies = TRUE,
-      repos = "https://cloud.r-project.org"
-    )
-  BiocManager::install("vsn", version = "devel")
-}
 library("vsn") # help(package = "vsn") # ls(pos = "package:vsn")
 
 c.out.file.t.path <- gsub("\\.count.txt$", ".count.ntd.meanSdPlot.pdf", args$c.out.file.path)
