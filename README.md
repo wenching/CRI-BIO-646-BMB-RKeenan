@@ -2,6 +2,11 @@
 
 RNA-Seq Analysis Pipeline based on [CRI](http://cri.uchicago.edu/) HPC system
 
+# CAUTION
+
+**THIS PACKAGE IS LARGE, PLEASE DO NOT DOWNLOAD THIS PIPELINE TO YOUR HOME DIRECTORY**
+**USE OTHER LOCATION LIKE /gpfs/data/bioinformatics/username**
+
 ## Dataset
 
 The RNA-seq data used in this tutorial are from the project CRI-BIO-646-BMB-RKeenan.
