@@ -50,6 +50,9 @@ if(! "argparse" %in% rownames(installed.packages())) {
 }
 
 
+BiocManager::install("GenomicRanges", ask = FALSE)
+
+
 if(! "DESeq2" %in% rownames(installed.packages())) {
   BiocManager::install("DESeq2", version = "devel")
 }
