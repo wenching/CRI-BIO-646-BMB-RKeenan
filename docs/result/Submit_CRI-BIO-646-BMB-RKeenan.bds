@@ -1,0 +1,444 @@
+#!/usr/bin/env bds
+
+// Raw Read QC >>>
+
+
+
+// Raw Read QC: [ BK-AA-1_S11_L007_R355 ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/WT01/BK-AA-1_S11_L007_R355/BK-AA-1_S11_L007_R1_001_fastqc.zip' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180216_K00242_0355_AHT7NTBBXX-RKeenan-AA-RS10/FastQ/BK-AA-1_S11_L007_R1_001.fastq.gz' ], cpus := 1, mem := 16*G, timeout := 72*hour, taskName := "FastQC.BK-AA-1_S11_L007_R355") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.RawReadQC.FastQC.BK-AA-1_S11_L007_R355.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/WT01/BK-AA-1_S11_L007_R355/BK-AA-1_S11_L007_R1_001_fastqc.zip' ] )
+
+
+// Raw Read QC: [ BK-AA-1_S11_L007_R357 ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/WT01/BK-AA-1_S11_L007_R357/BK-AA-1_S11_L007_R1_001_fastqc.zip' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180223_K00242_0357_AHT37VBBXX-RKeenan-AA-RS10/FastQ/BK-AA-1_S11_L007_R1_001.fastq.gz' ], cpus := 1, mem := 16*G, timeout := 72*hour, taskName := "FastQC.BK-AA-1_S11_L007_R357") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.RawReadQC.FastQC.BK-AA-1_S11_L007_R357.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/WT01/BK-AA-1_S11_L007_R357/BK-AA-1_S11_L007_R1_001_fastqc.zip' ] )
+
+
+// Raw Read QC: [ BK-AA-2_S12_L007_R355 ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/WT02/BK-AA-2_S12_L007_R355/BK-AA-2_S12_L007_R1_001_fastqc.zip' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180216_K00242_0355_AHT7NTBBXX-RKeenan-AA-RS10/FastQ/BK-AA-2_S12_L007_R1_001.fastq.gz' ], cpus := 1, mem := 16*G, timeout := 72*hour, taskName := "FastQC.BK-AA-2_S12_L007_R355") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.RawReadQC.FastQC.BK-AA-2_S12_L007_R355.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/WT02/BK-AA-2_S12_L007_R355/BK-AA-2_S12_L007_R1_001_fastqc.zip' ] )
+
+
+// Raw Read QC: [ BK-AA-2_S12_L007_R357 ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/WT02/BK-AA-2_S12_L007_R357/BK-AA-2_S12_L007_R1_001_fastqc.zip' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180223_K00242_0357_AHT37VBBXX-RKeenan-AA-RS10/FastQ/BK-AA-2_S12_L007_R1_001.fastq.gz' ], cpus := 1, mem := 16*G, timeout := 72*hour, taskName := "FastQC.BK-AA-2_S12_L007_R357") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.RawReadQC.FastQC.BK-AA-2_S12_L007_R357.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/WT02/BK-AA-2_S12_L007_R357/BK-AA-2_S12_L007_R1_001_fastqc.zip' ] )
+
+
+// Raw Read QC: [ BK-AA-3_S13_L007_R355 ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/WT03/BK-AA-3_S13_L007_R355/BK-AA-3_S13_L007_R1_001_fastqc.zip' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180216_K00242_0355_AHT7NTBBXX-RKeenan-AA-RS10/FastQ/BK-AA-3_S13_L007_R1_001.fastq.gz' ], cpus := 1, mem := 16*G, timeout := 72*hour, taskName := "FastQC.BK-AA-3_S13_L007_R355") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.RawReadQC.FastQC.BK-AA-3_S13_L007_R355.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/WT03/BK-AA-3_S13_L007_R355/BK-AA-3_S13_L007_R1_001_fastqc.zip' ] )
+
+
+// Raw Read QC: [ BK-AA-3_S13_L007_R357 ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/WT03/BK-AA-3_S13_L007_R357/BK-AA-3_S13_L007_R1_001_fastqc.zip' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180223_K00242_0357_AHT37VBBXX-RKeenan-AA-RS10/FastQ/BK-AA-3_S13_L007_R1_001.fastq.gz' ], cpus := 1, mem := 16*G, timeout := 72*hour, taskName := "FastQC.BK-AA-3_S13_L007_R357") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.RawReadQC.FastQC.BK-AA-3_S13_L007_R357.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/WT03/BK-AA-3_S13_L007_R357/BK-AA-3_S13_L007_R1_001_fastqc.zip' ] )
+
+
+// Raw Read QC: [ BK-AA-4_S14_L007_R355 ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/KO01/BK-AA-4_S14_L007_R355/BK-AA-4_S14_L007_R1_001_fastqc.zip' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180216_K00242_0355_AHT7NTBBXX-RKeenan-AA-RS10/FastQ/BK-AA-4_S14_L007_R1_001.fastq.gz' ], cpus := 1, mem := 16*G, timeout := 72*hour, taskName := "FastQC.BK-AA-4_S14_L007_R355") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.RawReadQC.FastQC.BK-AA-4_S14_L007_R355.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/KO01/BK-AA-4_S14_L007_R355/BK-AA-4_S14_L007_R1_001_fastqc.zip' ] )
+
+
+// Raw Read QC: [ BK-AA-4_S14_L007_R357 ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/KO01/BK-AA-4_S14_L007_R357/BK-AA-4_S14_L007_R1_001_fastqc.zip' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180223_K00242_0357_AHT37VBBXX-RKeenan-AA-RS10/FastQ/BK-AA-4_S14_L007_R1_001.fastq.gz' ], cpus := 1, mem := 16*G, timeout := 72*hour, taskName := "FastQC.BK-AA-4_S14_L007_R357") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.RawReadQC.FastQC.BK-AA-4_S14_L007_R357.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/KO01/BK-AA-4_S14_L007_R357/BK-AA-4_S14_L007_R1_001_fastqc.zip' ] )
+
+
+// Raw Read QC: [ BK-AA-5_S15_L007_R355 ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/KO02/BK-AA-5_S15_L007_R355/BK-AA-5_S15_L007_R1_001_fastqc.zip' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180216_K00242_0355_AHT7NTBBXX-RKeenan-AA-RS10/FastQ/BK-AA-5_S15_L007_R1_001.fastq.gz' ], cpus := 1, mem := 16*G, timeout := 72*hour, taskName := "FastQC.BK-AA-5_S15_L007_R355") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.RawReadQC.FastQC.BK-AA-5_S15_L007_R355.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/KO02/BK-AA-5_S15_L007_R355/BK-AA-5_S15_L007_R1_001_fastqc.zip' ] )
+
+
+// Raw Read QC: [ BK-AA-5_S15_L007_R357 ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/KO02/BK-AA-5_S15_L007_R357/BK-AA-5_S15_L007_R1_001_fastqc.zip' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180223_K00242_0357_AHT37VBBXX-RKeenan-AA-RS10/FastQ/BK-AA-5_S15_L007_R1_001.fastq.gz' ], cpus := 1, mem := 16*G, timeout := 72*hour, taskName := "FastQC.BK-AA-5_S15_L007_R357") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.RawReadQC.FastQC.BK-AA-5_S15_L007_R357.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/KO02/BK-AA-5_S15_L007_R357/BK-AA-5_S15_L007_R1_001_fastqc.zip' ] )
+
+
+// Raw Read QC: [ BK-AA-6_S16_L007_R355 ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/KO03/BK-AA-6_S16_L007_R355/BK-AA-6_S16_L007_R1_001_fastqc.zip' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180216_K00242_0355_AHT7NTBBXX-RKeenan-AA-RS10/FastQ/BK-AA-6_S16_L007_R1_001.fastq.gz' ], cpus := 1, mem := 16*G, timeout := 72*hour, taskName := "FastQC.BK-AA-6_S16_L007_R355") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.RawReadQC.FastQC.BK-AA-6_S16_L007_R355.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/KO03/BK-AA-6_S16_L007_R355/BK-AA-6_S16_L007_R1_001_fastqc.zip' ] )
+
+
+// Raw Read QC: [ BK-AA-6_S16_L007_R357 ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/KO03/BK-AA-6_S16_L007_R357/BK-AA-6_S16_L007_R1_001_fastqc.zip' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180223_K00242_0357_AHT37VBBXX-RKeenan-AA-RS10/FastQ/BK-AA-6_S16_L007_R1_001.fastq.gz' ], cpus := 1, mem := 16*G, timeout := 72*hour, taskName := "FastQC.BK-AA-6_S16_L007_R357") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.RawReadQC.FastQC.BK-AA-6_S16_L007_R357.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/RawReadQC/KO03/BK-AA-6_S16_L007_R357/BK-AA-6_S16_L007_R1_001_fastqc.zip' ] )
+
+
+// <<< Raw Read QC
+
+
+
+// Read Alignment >>>
+
+
+
+// Read Alignment: [ BK-AA-1_S11_L007_R355 ] using [ star ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT01/BK-AA-1_S11_L007_R355/BK-AA-1_S11_L007_R355.star.bam' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180216_K00242_0355_AHT7NTBBXX-RKeenan-AA-RS10/FastQ/BK-AA-1_S11_L007_R1_001.fastq.gz' ], cpus := 4, mem := 64*G, timeout := 72*hour, taskName := "star.BK-AA-1_S11_L007_R355") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alignRead.star.BK-AA-1_S11_L007_R355.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT01/BK-AA-1_S11_L007_R355/BK-AA-1_S11_L007_R355.star.bam' ] )
+
+
+// Read Alignment: [ BK-AA-1_S11_L007_R357 ] using [ star ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT01/BK-AA-1_S11_L007_R357/BK-AA-1_S11_L007_R357.star.bam' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180223_K00242_0357_AHT37VBBXX-RKeenan-AA-RS10/FastQ/BK-AA-1_S11_L007_R1_001.fastq.gz' ], cpus := 4, mem := 64*G, timeout := 72*hour, taskName := "star.BK-AA-1_S11_L007_R357") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alignRead.star.BK-AA-1_S11_L007_R357.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT01/BK-AA-1_S11_L007_R357/BK-AA-1_S11_L007_R357.star.bam' ] )
+
+
+// Read Alignment: [ BK-AA-2_S12_L007_R355 ] using [ star ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT02/BK-AA-2_S12_L007_R355/BK-AA-2_S12_L007_R355.star.bam' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180216_K00242_0355_AHT7NTBBXX-RKeenan-AA-RS10/FastQ/BK-AA-2_S12_L007_R1_001.fastq.gz' ], cpus := 4, mem := 64*G, timeout := 72*hour, taskName := "star.BK-AA-2_S12_L007_R355") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alignRead.star.BK-AA-2_S12_L007_R355.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT02/BK-AA-2_S12_L007_R355/BK-AA-2_S12_L007_R355.star.bam' ] )
+
+
+// Read Alignment: [ BK-AA-2_S12_L007_R357 ] using [ star ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT02/BK-AA-2_S12_L007_R357/BK-AA-2_S12_L007_R357.star.bam' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180223_K00242_0357_AHT37VBBXX-RKeenan-AA-RS10/FastQ/BK-AA-2_S12_L007_R1_001.fastq.gz' ], cpus := 4, mem := 64*G, timeout := 72*hour, taskName := "star.BK-AA-2_S12_L007_R357") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alignRead.star.BK-AA-2_S12_L007_R357.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT02/BK-AA-2_S12_L007_R357/BK-AA-2_S12_L007_R357.star.bam' ] )
+
+
+// Read Alignment: [ BK-AA-3_S13_L007_R355 ] using [ star ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT03/BK-AA-3_S13_L007_R355/BK-AA-3_S13_L007_R355.star.bam' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180216_K00242_0355_AHT7NTBBXX-RKeenan-AA-RS10/FastQ/BK-AA-3_S13_L007_R1_001.fastq.gz' ], cpus := 4, mem := 64*G, timeout := 72*hour, taskName := "star.BK-AA-3_S13_L007_R355") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alignRead.star.BK-AA-3_S13_L007_R355.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT03/BK-AA-3_S13_L007_R355/BK-AA-3_S13_L007_R355.star.bam' ] )
+
+
+// Read Alignment: [ BK-AA-3_S13_L007_R357 ] using [ star ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT03/BK-AA-3_S13_L007_R357/BK-AA-3_S13_L007_R357.star.bam' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180223_K00242_0357_AHT37VBBXX-RKeenan-AA-RS10/FastQ/BK-AA-3_S13_L007_R1_001.fastq.gz' ], cpus := 4, mem := 64*G, timeout := 72*hour, taskName := "star.BK-AA-3_S13_L007_R357") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alignRead.star.BK-AA-3_S13_L007_R357.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT03/BK-AA-3_S13_L007_R357/BK-AA-3_S13_L007_R357.star.bam' ] )
+
+
+// Read Alignment: [ BK-AA-4_S14_L007_R355 ] using [ star ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/BK-AA-4_S14_L007_R355/BK-AA-4_S14_L007_R355.star.bam' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180216_K00242_0355_AHT7NTBBXX-RKeenan-AA-RS10/FastQ/BK-AA-4_S14_L007_R1_001.fastq.gz' ], cpus := 4, mem := 64*G, timeout := 72*hour, taskName := "star.BK-AA-4_S14_L007_R355") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alignRead.star.BK-AA-4_S14_L007_R355.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/BK-AA-4_S14_L007_R355/BK-AA-4_S14_L007_R355.star.bam' ] )
+
+
+// Read Alignment: [ BK-AA-4_S14_L007_R357 ] using [ star ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/BK-AA-4_S14_L007_R357/BK-AA-4_S14_L007_R357.star.bam' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180223_K00242_0357_AHT37VBBXX-RKeenan-AA-RS10/FastQ/BK-AA-4_S14_L007_R1_001.fastq.gz' ], cpus := 4, mem := 64*G, timeout := 72*hour, taskName := "star.BK-AA-4_S14_L007_R357") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alignRead.star.BK-AA-4_S14_L007_R357.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/BK-AA-4_S14_L007_R357/BK-AA-4_S14_L007_R357.star.bam' ] )
+
+
+// Read Alignment: [ BK-AA-5_S15_L007_R355 ] using [ star ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO02/BK-AA-5_S15_L007_R355/BK-AA-5_S15_L007_R355.star.bam' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180216_K00242_0355_AHT7NTBBXX-RKeenan-AA-RS10/FastQ/BK-AA-5_S15_L007_R1_001.fastq.gz' ], cpus := 4, mem := 64*G, timeout := 72*hour, taskName := "star.BK-AA-5_S15_L007_R355") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alignRead.star.BK-AA-5_S15_L007_R355.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO02/BK-AA-5_S15_L007_R355/BK-AA-5_S15_L007_R355.star.bam' ] )
+
+
+// Read Alignment: [ BK-AA-5_S15_L007_R357 ] using [ star ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO02/BK-AA-5_S15_L007_R357/BK-AA-5_S15_L007_R357.star.bam' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180223_K00242_0357_AHT37VBBXX-RKeenan-AA-RS10/FastQ/BK-AA-5_S15_L007_R1_001.fastq.gz' ], cpus := 4, mem := 64*G, timeout := 72*hour, taskName := "star.BK-AA-5_S15_L007_R357") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alignRead.star.BK-AA-5_S15_L007_R357.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO02/BK-AA-5_S15_L007_R357/BK-AA-5_S15_L007_R357.star.bam' ] )
+
+
+// Read Alignment: [ BK-AA-6_S16_L007_R355 ] using [ star ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO03/BK-AA-6_S16_L007_R355/BK-AA-6_S16_L007_R355.star.bam' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180216_K00242_0355_AHT7NTBBXX-RKeenan-AA-RS10/FastQ/BK-AA-6_S16_L007_R1_001.fastq.gz' ], cpus := 4, mem := 64*G, timeout := 72*hour, taskName := "star.BK-AA-6_S16_L007_R355") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alignRead.star.BK-AA-6_S16_L007_R355.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO03/BK-AA-6_S16_L007_R355/BK-AA-6_S16_L007_R355.star.bam' ] )
+
+
+// Read Alignment: [ BK-AA-6_S16_L007_R357 ] using [ star ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO03/BK-AA-6_S16_L007_R357/BK-AA-6_S16_L007_R357.star.bam' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646/data/180223_K00242_0357_AHT37VBBXX-RKeenan-AA-RS10/FastQ/BK-AA-6_S16_L007_R1_001.fastq.gz' ], cpus := 4, mem := 64*G, timeout := 72*hour, taskName := "star.BK-AA-6_S16_L007_R357") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alignRead.star.BK-AA-6_S16_L007_R357.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO03/BK-AA-6_S16_L007_R357/BK-AA-6_S16_L007_R357.star.bam' ] )
+
+
+// <<< Read Alignment
+
+
+
+// Alignment Merging >>>
+
+
+
+// Alignment Merging: [ WT01 ] using [ star ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT01/WT01.star.bai' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT01/BK-AA-1_S11_L007_R355/BK-AA-1_S11_L007_R355.star.bam', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT01/BK-AA-1_S11_L007_R357/BK-AA-1_S11_L007_R357.star.bam' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "star.WT01") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.mergeAln.star.WT01.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT01/WT01.star.bai' ] )
+
+
+
+// Alignment Merging: [ WT02 ] using [ star ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT02/WT02.star.bai' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT02/BK-AA-2_S12_L007_R355/BK-AA-2_S12_L007_R355.star.bam', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT02/BK-AA-2_S12_L007_R357/BK-AA-2_S12_L007_R357.star.bam' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "star.WT02") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.mergeAln.star.WT02.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT02/WT02.star.bai' ] )
+
+
+
+// Alignment Merging: [ WT03 ] using [ star ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT03/WT03.star.bai' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT03/BK-AA-3_S13_L007_R355/BK-AA-3_S13_L007_R355.star.bam', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT03/BK-AA-3_S13_L007_R357/BK-AA-3_S13_L007_R357.star.bam' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "star.WT03") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.mergeAln.star.WT03.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT03/WT03.star.bai' ] )
+
+
+
+// Alignment Merging: [ KO01 ] using [ star ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/KO01.star.bai' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/BK-AA-4_S14_L007_R355/BK-AA-4_S14_L007_R355.star.bam', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/BK-AA-4_S14_L007_R357/BK-AA-4_S14_L007_R357.star.bam' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "star.KO01") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.mergeAln.star.KO01.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/KO01.star.bai' ] )
+
+
+
+// Alignment Merging: [ KO02 ] using [ star ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO02/KO02.star.bai' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO02/BK-AA-5_S15_L007_R355/BK-AA-5_S15_L007_R355.star.bam', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO02/BK-AA-5_S15_L007_R357/BK-AA-5_S15_L007_R357.star.bam' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "star.KO02") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.mergeAln.star.KO02.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO02/KO02.star.bai' ] )
+
+
+
+// Alignment Merging: [ KO03 ] using [ star ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO03/KO03.star.bai' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO03/BK-AA-6_S16_L007_R355/BK-AA-6_S16_L007_R355.star.bam', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO03/BK-AA-6_S16_L007_R357/BK-AA-6_S16_L007_R357.star.bam' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "star.KO03") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.mergeAln.star.KO03.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO03/KO03.star.bai' ] )
+
+
+// <<< Alignment Merging
+
+
+
+// Alignment QC>>>
+
+
+
+// Alignment QC: [ WT01 ] aligned by [ star ] using [ picard::CollectRnaSeqMetrics ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/WT01/WT01.star.picard.RNA_Metrics', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/WT01/WT01.star.picard.RNA_Metrics.pdf' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT01/WT01.star.bai' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "picard.star.WT01") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.picard.star.WT01.CollectRnaSeqMetrics.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/WT01/WT01.star.picard.RNA_Metrics', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/WT01/WT01.star.picard.RNA_Metrics.pdf' ] )
+
+
+// Alignment QC: [ WT02 ] aligned by [ star ] using [ picard::CollectRnaSeqMetrics ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/WT02/WT02.star.picard.RNA_Metrics', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/WT02/WT02.star.picard.RNA_Metrics.pdf' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT02/WT02.star.bai' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "picard.star.WT02") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.picard.star.WT02.CollectRnaSeqMetrics.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/WT02/WT02.star.picard.RNA_Metrics', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/WT02/WT02.star.picard.RNA_Metrics.pdf' ] )
+
+
+// Alignment QC: [ WT03 ] aligned by [ star ] using [ picard::CollectRnaSeqMetrics ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/WT03/WT03.star.picard.RNA_Metrics', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/WT03/WT03.star.picard.RNA_Metrics.pdf' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT03/WT03.star.bai' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "picard.star.WT03") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.picard.star.WT03.CollectRnaSeqMetrics.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/WT03/WT03.star.picard.RNA_Metrics', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/WT03/WT03.star.picard.RNA_Metrics.pdf' ] )
+
+
+// Alignment QC: [ KO01 ] aligned by [ star ] using [ picard::CollectRnaSeqMetrics ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics.pdf' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/KO01.star.bai' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "picard.star.KO01") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.picard.star.KO01.CollectRnaSeqMetrics.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO01/KO01.star.picard.RNA_Metrics.pdf' ] )
+
+
+// Alignment QC: [ KO02 ] aligned by [ star ] using [ picard::CollectRnaSeqMetrics ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO02/KO02.star.picard.RNA_Metrics', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO02/KO02.star.picard.RNA_Metrics.pdf' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO02/KO02.star.bai' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "picard.star.KO02") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.picard.star.KO02.CollectRnaSeqMetrics.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO02/KO02.star.picard.RNA_Metrics', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO02/KO02.star.picard.RNA_Metrics.pdf' ] )
+
+
+// Alignment QC: [ KO03 ] aligned by [ star ] using [ picard::CollectRnaSeqMetrics ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO03/KO03.star.picard.RNA_Metrics', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO03/KO03.star.picard.RNA_Metrics.pdf' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO03/KO03.star.bai' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "picard.star.KO03") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.picard.star.KO03.CollectRnaSeqMetrics.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO03/KO03.star.picard.RNA_Metrics', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/picard/star/KO03/KO03.star.picard.RNA_Metrics.pdf' ] )
+
+
+// Alignment QC: [ WT01 ] aligned by [ star ] using [ rseqc::clipping_profile.py ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT01/WT01.star.rseqc.clipping_profile.xls', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT01/WT01.star.rseqc.clipping_profile.r', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT01/WT01.star.rseqc.clipping_profile.pdf' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT01/WT01.star.bai' ], cpus := 8, mem := 64*G, timeout := 72*hour, taskName := "rseqc.star.WT01") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.rseqc.star.WT01.clipping_profile.py.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT01/WT01.star.rseqc.clipping_profile.xls', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT01/WT01.star.rseqc.clipping_profile.r', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT01/WT01.star.rseqc.clipping_profile.pdf' ] )
+
+
+// Alignment QC: [ WT01 ] aligned by [ star ] using [ rseqc::infer_experiment.py ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT01/WT01.star.rseqc.infer_experiment.txt' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT01/WT01.star.bai' ], cpus := 8, mem := 64*G, timeout := 72*hour, taskName := "rseqc.star.WT01") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.rseqc.star.WT01.infer_experiment.py.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT01/WT01.star.rseqc.infer_experiment.txt' ] )
+
+
+// Alignment QC: [ WT02 ] aligned by [ star ] using [ rseqc::clipping_profile.py ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT02/WT02.star.rseqc.clipping_profile.xls', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT02/WT02.star.rseqc.clipping_profile.r', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT02/WT02.star.rseqc.clipping_profile.pdf' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT02/WT02.star.bai' ], cpus := 8, mem := 64*G, timeout := 72*hour, taskName := "rseqc.star.WT02") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.rseqc.star.WT02.clipping_profile.py.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT02/WT02.star.rseqc.clipping_profile.xls', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT02/WT02.star.rseqc.clipping_profile.r', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT02/WT02.star.rseqc.clipping_profile.pdf' ] )
+
+
+// Alignment QC: [ WT02 ] aligned by [ star ] using [ rseqc::infer_experiment.py ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT02/WT02.star.rseqc.infer_experiment.txt' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT02/WT02.star.bai' ], cpus := 8, mem := 64*G, timeout := 72*hour, taskName := "rseqc.star.WT02") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.rseqc.star.WT02.infer_experiment.py.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT02/WT02.star.rseqc.infer_experiment.txt' ] )
+
+
+// Alignment QC: [ WT03 ] aligned by [ star ] using [ rseqc::clipping_profile.py ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT03/WT03.star.rseqc.clipping_profile.xls', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT03/WT03.star.rseqc.clipping_profile.r', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT03/WT03.star.rseqc.clipping_profile.pdf' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT03/WT03.star.bai' ], cpus := 8, mem := 64*G, timeout := 72*hour, taskName := "rseqc.star.WT03") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.rseqc.star.WT03.clipping_profile.py.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT03/WT03.star.rseqc.clipping_profile.xls', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT03/WT03.star.rseqc.clipping_profile.r', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT03/WT03.star.rseqc.clipping_profile.pdf' ] )
+
+
+// Alignment QC: [ WT03 ] aligned by [ star ] using [ rseqc::infer_experiment.py ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT03/WT03.star.rseqc.infer_experiment.txt' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT03/WT03.star.bai' ], cpus := 8, mem := 64*G, timeout := 72*hour, taskName := "rseqc.star.WT03") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.rseqc.star.WT03.infer_experiment.py.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/WT03/WT03.star.rseqc.infer_experiment.txt' ] )
+
+
+// Alignment QC: [ KO01 ] aligned by [ star ] using [ rseqc::clipping_profile.py ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.xls', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.r', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.pdf' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/KO01.star.bai' ], cpus := 8, mem := 64*G, timeout := 72*hour, taskName := "rseqc.star.KO01") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.rseqc.star.KO01.clipping_profile.py.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.xls', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.r', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.clipping_profile.pdf' ] )
+
+
+// Alignment QC: [ KO01 ] aligned by [ star ] using [ rseqc::infer_experiment.py ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.infer_experiment.txt' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/KO01.star.bai' ], cpus := 8, mem := 64*G, timeout := 72*hour, taskName := "rseqc.star.KO01") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.rseqc.star.KO01.infer_experiment.py.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO01/KO01.star.rseqc.infer_experiment.txt' ] )
+
+
+// Alignment QC: [ KO02 ] aligned by [ star ] using [ rseqc::clipping_profile.py ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO02/KO02.star.rseqc.clipping_profile.xls', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO02/KO02.star.rseqc.clipping_profile.r', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO02/KO02.star.rseqc.clipping_profile.pdf' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO02/KO02.star.bai' ], cpus := 8, mem := 64*G, timeout := 72*hour, taskName := "rseqc.star.KO02") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.rseqc.star.KO02.clipping_profile.py.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO02/KO02.star.rseqc.clipping_profile.xls', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO02/KO02.star.rseqc.clipping_profile.r', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO02/KO02.star.rseqc.clipping_profile.pdf' ] )
+
+
+// Alignment QC: [ KO02 ] aligned by [ star ] using [ rseqc::infer_experiment.py ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO02/KO02.star.rseqc.infer_experiment.txt' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO02/KO02.star.bai' ], cpus := 8, mem := 64*G, timeout := 72*hour, taskName := "rseqc.star.KO02") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.rseqc.star.KO02.infer_experiment.py.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO02/KO02.star.rseqc.infer_experiment.txt' ] )
+
+
+// Alignment QC: [ KO03 ] aligned by [ star ] using [ rseqc::clipping_profile.py ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO03/KO03.star.rseqc.clipping_profile.xls', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO03/KO03.star.rseqc.clipping_profile.r', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO03/KO03.star.rseqc.clipping_profile.pdf' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO03/KO03.star.bai' ], cpus := 8, mem := 64*G, timeout := 72*hour, taskName := "rseqc.star.KO03") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.rseqc.star.KO03.clipping_profile.py.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO03/KO03.star.rseqc.clipping_profile.xls', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO03/KO03.star.rseqc.clipping_profile.r', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO03/KO03.star.rseqc.clipping_profile.pdf' ] )
+
+
+// Alignment QC: [ KO03 ] aligned by [ star ] using [ rseqc::infer_experiment.py ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO03/KO03.star.rseqc.infer_experiment.txt' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO03/KO03.star.bai' ], cpus := 8, mem := 64*G, timeout := 72*hour, taskName := "rseqc.star.KO03") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.alnQC.rseqc.star.KO03.infer_experiment.py.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/AlnQC/rseqc/star/KO03/KO03.star.rseqc.infer_experiment.txt' ] )
+
+
+// <<< Alignment QC
+
+
+
+// Quantification >>>
+
+
+
+// Quantification: [ WT01 ] aligned by [ star ] using [ featurecounts ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT01/WT01.star.featurecounts.count' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT01/WT01.star.bai' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "featurecounts.star.WT01") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.quant.featurecounts.star.WT01.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT01/WT01.star.featurecounts.count' ] )
+
+
+// Quantification: [ WT02 ] aligned by [ star ] using [ featurecounts ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT02/WT02.star.featurecounts.count' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT02/WT02.star.bai' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "featurecounts.star.WT02") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.quant.featurecounts.star.WT02.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT02/WT02.star.featurecounts.count' ] )
+
+
+// Quantification: [ WT03 ] aligned by [ star ] using [ featurecounts ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT03/WT03.star.featurecounts.count' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/WT03/WT03.star.bai' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "featurecounts.star.WT03") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.quant.featurecounts.star.WT03.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT03/WT03.star.featurecounts.count' ] )
+
+
+// Quantification: [ KO01 ] aligned by [ star ] using [ featurecounts ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO01/KO01.star.bai' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "featurecounts.star.KO01") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.quant.featurecounts.star.KO01.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count' ] )
+
+
+// Quantification: [ KO02 ] aligned by [ star ] using [ featurecounts ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO02/KO02.star.featurecounts.count' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO02/KO02.star.bai' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "featurecounts.star.KO02") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.quant.featurecounts.star.KO02.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO02/KO02.star.featurecounts.count' ] )
+
+
+// Quantification: [ KO03 ] aligned by [ star ] using [ featurecounts ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO03/KO03.star.featurecounts.count' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Aln/star/KO03/KO03.star.bai' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "featurecounts.star.KO03") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.quant.featurecounts.star.KO03.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO03/KO03.star.featurecounts.count' ] )
+
+
+// <<< Quantification
+
+
+
+// Calling >>>
+
+
+
+// Calling: [ CRI-BIO-646-BMB-RKeenan ] aligned by [ star ], quantified by  [ featurecounts ], and called by [ edger ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/edger/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.edger.count.txt', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/edger/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.edger.test.DEG.txt' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT01/WT01.star.featurecounts.count', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT02/WT02.star.featurecounts.count', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT03/WT03.star.featurecounts.count', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO02/KO02.star.featurecounts.count', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO03/KO03.star.featurecounts.count' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "edger.featurecounts.star.CRI-BIO-646-BMB-RKeenan") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.call.edger.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/edger/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.edger.count.txt' ] )
+
+
+// Calling: [ CRI-BIO-646-BMB-RKeenan ] aligned by [ star ], quantified by  [ featurecounts ], and called by [ deseq2 ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.deseq2.count.txt', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.deseq2.test.DEG.txt' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT01/WT01.star.featurecounts.count', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT02/WT02.star.featurecounts.count', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT03/WT03.star.featurecounts.count', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO02/KO02.star.featurecounts.count', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO03/KO03.star.featurecounts.count' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "deseq2.featurecounts.star.CRI-BIO-646-BMB-RKeenan") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.call.deseq2.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.deseq2.count.txt' ] )
+
+
+// Calling: [ CRI-BIO-646-BMB-RKeenan ] aligned by [ star ], quantified by  [ featurecounts ], and called by [ limma ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/limma/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.limma.count.txt', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/limma/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.limma.test.DEG.txt' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT01/WT01.star.featurecounts.count', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT02/WT02.star.featurecounts.count', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/WT03/WT03.star.featurecounts.count', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO01/KO01.star.featurecounts.count', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO02/KO02.star.featurecounts.count', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/Quantification/featurecounts/star/KO03/KO03.star.featurecounts.count' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "limma.featurecounts.star.CRI-BIO-646-BMB-RKeenan") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.call.limma.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/limma/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.limma.count.txt' ] )
+
+
+// <<< Calling
+
+
+
+// Quantification QC >>>
+
+
+
+// Quantification QC: [ CRI-BIO-646-BMB-RKeenan ] aligned by [ star ], quantified by  [ featurecounts ], and called by [ deseq2 ] using quantificaiton QC tool [ pca ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/QuantQC/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.pca.pdf' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.deseq2.count.txt' ], cpus := 8, mem := 64*G, timeout := 72*hour, taskName := "pca.featurecounts.star.CRI-BIO-646-BMB-RKeenan") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.quantQC.pca.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/QuantQC/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.pca.pdf' ] )
+
+
+// <<< Quantification QC
+
+
+
+// Loci Statistics >>>
+
+
+
+// Loci Statistics: [ CRI-BIO-646-BMB-RKeenan ] aligned by [ star ] and quantified by  [ featurecounts ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/LociStat/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.overlap.txt' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/edger/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.edger.test.DEG.txt', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/deseq2/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.deseq2.test.DEG.txt', '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/DEG/limma/featurecounts/star/CRI-BIO-646-BMB-RKeenan.star.featurecounts.limma.test.DEG.txt' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "lociStat.featurecounts.star.CRI-BIO-646-BMB-RKeenan") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.lociStat.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/LociStat/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.overlap.txt' ] )
+
+
+// <<< Loci Statistics
+
+
+
+// Post Analysis >>>
+
+
+
+// Post Analysis: [ CRI-BIO-646-BMB-RKeenan ] aligned by [ star ] and quantified by  [ featurecounts ] using post analysis tool [ pheatmap ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/PostAna/pheatmap/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.heatmap.pdf' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/LociStat/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.overlap.txt' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "postAna.pheatmap.featurecounts.star.CRI-BIO-646-BMB-RKeenan") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.postAna.pheatmap.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/PostAna/pheatmap/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.heatmap.pdf' ] )
+
+
+// Post Analysis: [ CRI-BIO-646-BMB-RKeenan ] aligned by [ star ] and quantified by  [ featurecounts ] using post analysis tool [ clusterprofiler ]
+
+dep( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/PostAna/clusterprofiler/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.enrichGO.ALL.txt' ] <- [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/LociStat/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.overlap.txt' ], cpus := 4, mem := 32*G, timeout := 72*hour, taskName := "postAna.clusterprofiler.featurecounts.star.CRI-BIO-646-BMB-RKeenan") sys bash /gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/shell_scripts/run.postAna.clusterprofiler.featurecounts.star.CRI-BIO-646-BMB-RKeenan.sh; sleep 2
+goal( [ '/gpfs/data/bioinformatics/wchan10/CRI-BIO-646-BMB-RKeenan/RNAseq/PostAna/clusterprofiler/featurecounts/star/CRI-BIO-646-BMB-RKeenan/CRI-BIO-646-BMB-RKeenan.star.featurecounts.enrichGO.ALL.txt' ] )
+
+
+// <<< Post Analysis
+
+
