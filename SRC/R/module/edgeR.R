@@ -25,7 +25,7 @@
 
 
 rm(list = ls())
-print(.libPaths(c("SRC/R/lib/3.5", .libPaths())))
+print(.libPaths(c("SRC/R/lib/3.5")))
 
 
 # IMPORT logging library
