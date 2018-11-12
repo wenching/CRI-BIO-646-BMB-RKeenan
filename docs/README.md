@@ -47,6 +47,7 @@ If you have any questions, comments, or suggestions, feel free to contact our co
 
 * [Quick Start](#Quick)
 * [Introduction](#Intro)
+* [Navigation Map](#Navi)
 * [Work Flow](#Work)
 * [Data Description](#Data)
 * [Prerequisites](#Pre)
@@ -87,6 +88,7 @@ If you have any questions, comments, or suggestions, feel free to contact our co
 4. prepare pre-built STAR index files as the example reference hg38 under **[/gpfs/data/bioinformatics/cri_rnaseq_2018_ex/example/references/v28_92_GRCh38.p12/STAR)**
 
 
+
 ## <a name="Intro"/>Introduction | [Top](#Top)
 
 
@@ -114,7 +116,7 @@ This tutorial is based on CRI's high-performance computing (HPC) cluster. If you
 
 
 
-## <a name="Work"/>Work Folow | [Top](#Top)
+## <a name="Work"/>Work Flow | [Top](#Top)
 
 
 The RNA-seq data used in this tutorial are from **CRI-BIO-646-BMB-RKeenan**.
@@ -825,6 +827,13 @@ The login procedure varies slightly depending on whether you use a Mac/Unix/Linu
     > 2. tail *.bds.log
     > 
   
+
+
+
+## <a name="Navi"/>Navigation Map | [Top](#Top)
+
+
+![Navigation Map](IMG/CRI-RnaSeq-Workflow.png)
 
 
 
